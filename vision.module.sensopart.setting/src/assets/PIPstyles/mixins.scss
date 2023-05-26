@@ -1,0 +1,145 @@
+@mixin ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+@mixin alert {
+    .alert-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        [class*='MuiAlert-root'] {
+            padding: 2px 0;
+            align-items: center;
+            &[class*='MuiAlert-standardWarning'] {
+                color: var(--button-txt-warning-text-main);
+                background-color: transparent;
+            }
+            [class*='MuiAlert-icon'] {
+                padding: 2px 0;
+                margin-right: 5px;
+                svg {
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+            [class*='MuiAlert-message'] {
+                padding: 0;
+                font-size: 12px;
+                line-height: normal;
+            }
+        }
+    }
+}
+
+@mixin btn-checked {
+    &.checked {
+        color: #0085FF;
+        border-color: #007FF5;
+        background-color: #E5F4FF;
+    }
+}
+
+@mixin accordion-set {
+    [class*='MuiAccordion-root'] {
+        border-color: rgba(var(--default-divider));
+        border-radius: 0;
+        [class*='MuiAccordionSummary-root'] {
+            min-height: auto;
+            padding: 8px;
+            [class*='MuiAccordionSummary-content'] {
+                padding-right: 8px;
+                border-right: 1px solid rgba(var(--default-divider));
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;;
+                align-items: center;
+                gap: 8px;
+                & > span {
+                    @include ellipsis;
+                    max-width: 159px;
+                    display: inline-block;
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+            }
+            [class*='MuiAccordionSummary-expandIconWrapper'] {
+                margin-left: 8px;
+            }
+            .pose-control-btn,
+            .point-control-btn {
+                display: flex;
+                flex-direction: row;
+                gap: 8px;
+                [class*='MuiButton-root'] {
+                    svg {
+                        width: 16px;
+                        height: 16px;
+                    }
+                    .btn-txt {
+                        display: none;
+                        @media screen and (min-width: 1280px){
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+        [class*='MuiAccordionDetails-root'] {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 5px;
+            border-color: rgba(var(--default-divider));
+            .desc-textfield {
+                flex: 1;
+                flex-basis: calc((100% - 25px) / 6);
+                @media screen and (min-width: 1280px){
+                    flex-basis: calc((100% - 10px) / 3);
+                }
+                [class*='MuiInputBase-input'] {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+@mixin status {
+    .status-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        .status-icon {
+            width: 20px;
+            height: 20px;
+            &.disabled {
+                color: rgba(var(--default-status-off), 1);
+            }
+            &.success {
+                color: rgba(var(--default-status-success), 1);
+            }
+            &.error {
+                color: rgba(var(--default-status-error), 1);
+            }
+        }
+    }
+}
+
+@mixin right-btn($padding) {
+    padding: $padding;
+    display: flex;
+    justify-content: end;
+    [class*='MuiButton-root'] {
+        width: 120px;
+        height: 32px;
+    }
+}
+
+@mixin cockpit {
+    &:focus-within {
+        box-shadow: 0 0 0 1px #FFF, 0 0 0 3px #000;
+    }
+}

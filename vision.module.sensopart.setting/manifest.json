@@ -1,0 +1,41 @@
+{
+  "main": "index.bundle.js",
+  "usesPermissions": [],
+  "supportedLanguages": [],
+  "requiredPackageNames": [],
+  "type": "DEVICE_SETTING",
+  "screens": [
+      {
+          "name": "Sensopart Setting",
+          "id": "MainScreen",
+          "messageFilters": [
+              {
+                  "action": "dart.message.action.MAIN",
+                  "category": "dart.message.category.SCREEN"
+              }
+          ]
+      },
+      {
+          "name": "Detection",
+          "id": "pip_detection",
+          "messageFilters": [
+              {
+                  "action": "com.dart.module.taskeditor.action.USER_COMMAND",
+                  "category": "dart.message.category.PIP_SCREEN"
+              }
+          ]
+      }
+  ],
+  "services": [
+      {
+          "name": "Custom Service",
+          "id": "pip_detection",
+          "messageFilters": [
+              {
+                  "action": "com.dart.module.taskeditor.action.USER_COMMAND",
+                  "category": "dart.message.category.SERVICE"
+              }
+          ]
+      }
+  ]
+}
