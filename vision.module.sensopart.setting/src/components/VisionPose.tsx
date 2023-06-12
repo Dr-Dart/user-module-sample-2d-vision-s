@@ -6,6 +6,7 @@ import styles from "../assets/PIPstyles/styles.scss";
 import IcnGetPose from "../assets/images/icon_get_pose.svg";
 import IcnMoveTo from "../assets/images/icon_move_to.svg";
 import IcnReset from "../assets/images/icon_reset.svg";
+import { EulerType, IMathLibrary } from 'dart-api/dart-api-math';
 
 
 import { Context, IRobotManager, IPositionManager, IMotionManager, SixNumArray, CoordinateSystem, ModuleContext, StopType } from "dart-api";
@@ -106,14 +107,14 @@ const parseData = (data: string): ParsedData => {
 
 
 export default function VisionPose({ moduleContext, IvisionPose, onPoseChange, sendMessageTCP, receivedMsg }: VisionPoseProps) {
-  
+
 
   const { packageName } = moduleContext;
 
   const robotManager = moduleContext.getSystemManager(Context.ROBOT_MANAGER) as IRobotManager;
   const positionManager = moduleContext.getSystemManager(Context.POSITION_MANAGER) as IPositionManager;
   const motionManager = moduleContext.getSystemManager(Context.MOTION_MANAGER) as IMotionManager;
-
+  const mathLibrary = moduleContext.getSystemLibrary(Context.MATH_LIBRARY) as IMathLibrary;
 
   const [isServoOn, setServoOn] = useState(robotManager.servoState.value);
   const [txCmd, setTxCmd] = useState<string>('TRX04test');
@@ -125,26 +126,26 @@ export default function VisionPose({ moduleContext, IvisionPose, onPoseChange, s
     if (receivedMsg && Object.keys(receivedMsg).length !== 0) {
 
       const parsedData = parseData(JSON.stringify(receivedMsg));
-      
-      let theta_xyz = [parsedData.rotation.rx, parsedData.rotation.ry, parsedData.rotation.rz];
-      let theta_zyz = eulxyz2eulzyz(theta_xyz);
+      let theta_zyx = mathLibrary.convertEuler(
+        {
+          pose: [0, 0, 0, parsedData.rotation.rx, parsedData.rotation.ry, parsedData.rotation.rz],
+          type: EulerType.XYZ
+        },
+        EulerType.ZYX
+      );
+
+
       onPoseChange([
         parsedData.position.x,
         parsedData.position.y,
         parsedData.position.z,
-        theta_zyz[0],
-        theta_zyz[1],
-        theta_zyz[2]
+        theta_zyx.pose[3],
+        theta_zyx.pose[4],
+        theta_zyx.pose[5]
       ]);
     }
   }, [receivedMsg]);
-  
-  
 
-
-
-
-  
 
   useEffect(() => {
     const servoStateCallback = (data: any) => {
@@ -160,99 +161,6 @@ export default function VisionPose({ moduleContext, IvisionPose, onPoseChange, s
   }, []);
 
 
-  function degree2rad(degree: number): number {
-    return (degree * Math.PI) / 180;
-  }
-
-  function matrixMultiply(A: number[][], B: number[][]): number[][] {
-    if (!A || !B) {
-      throw new Error("Input matrices A and B must not be empty.");
-    }
-
-    if (!A.every(row => Array.isArray(row)) || !B.every(row => Array.isArray(row))) {
-      throw new Error("Input matrices A and B must be arrays of arrays.");
-    }
-
-    if (!A.every(row => row.length === A[0].length) || !B.every(row => row.length === B[0].length)) {
-      throw new Error("Input matrices A and B must have consistent row lengths.");
-    }
-
-    if (A[0].length !== B.length) {
-      throw new Error("The number of columns in matrix A must match the number of rows in matrix B.");
-    }
-
-    return A.map(A_row => B[0].map((_, colIdx) => A_row.reduce((sum, a, rowIdx) => sum + a * B[rowIdx][colIdx], 0)));
-  }
-
-  function rotationMatrixFromEulerAngles(theta: number[]): number[][] {
-    const [alpha, beta, gamma] = theta.map(degree2rad);
-
-    const R_x = [
-      [1, 0, 0],
-      [0, Math.cos(alpha), -Math.sin(alpha)],
-      [0, Math.sin(alpha), Math.cos(alpha)]
-    ];
-
-    const R_y = [
-      [Math.cos(beta), 0, Math.sin(beta)],
-      [0, 1, 0],
-      [-Math.sin(beta), 0, Math.cos(beta)]
-    ];
-
-    const R_z = [
-      [Math.cos(gamma), -Math.sin(gamma), 0],
-      [Math.sin(gamma), Math.cos(gamma), 0],
-      [0, 0, 1]
-    ];
-
-    return matrixMultiply(matrixMultiply(R_x, R_y), R_z);
-  }
-  function eulerAnglesFromRotationMatrix(R: number[][]): number[] {
-    const epsilon = 1e-6;
-    let rz1, ry, rz2;
-
-    if (Math.abs(R[0][2]) < epsilon && Math.abs(R[1][2]) < epsilon) {
-      // Gimbal lock (singular) case
-      rz1 = 0;
-      const sp = 0;
-      const cp = 1;
-
-      ry = Math.atan2(cp * R[0][2] + sp * R[1][2], R[2][2])
-      rz2 = Math.atan2(-sp * R[0][0] + cp * R[1][0], -sp * R[0][1] + cp * R[1][1]);
-
-    } else {
-      rz1 = Math.atan2(R[1][2], R[0][2])
-
-      const sp = Math.sin(rz1)
-      const cp = Math.cos(rz1)
-
-      ry = Math.atan2(cp * R[0][2] + sp * R[1][2], R[2][2])
-      rz2 = Math.atan2(-sp * R[0][0] + cp * R[1][0], -sp * R[0][1] + cp * R[1][1])
-
-    }
-
-    const angles = [rz1, ry, rz2].map((rad) => {
-      let deg = (rad * 180) / Math.PI;
-      if (deg > 180) {
-        deg -= 360;
-      } else if (deg < -180) {
-        deg += 360;
-      }
-      return deg;
-    });
-
-    return angles;
-  }
-
-
-
-
-  function eulxyz2eulzyz(theta_degrees: number[]): number[] {
-    const R = rotationMatrixFromEulerAngles(theta_degrees);
-    return eulerAnglesFromRotationMatrix(R);
-  }
-
-
   function checkDataBeforeMoving(params: Record<string, string | number | null>): boolean {
     let canMove = true;
     for (const [key, value] of Object.entries(params)) {
@@ -265,7 +173,7 @@ export default function VisionPose({ moduleContext, IvisionPose, onPoseChange, s
         canMove = false;
         break;
       } else {
-    
+
       }
     }
     return canMove;
@@ -301,8 +209,9 @@ export default function VisionPose({ moduleContext, IvisionPose, onPoseChange, s
         const pos = [...arrtmp] as SixNumArray;
         const object = Object.assign(
           {},
-          { x: pos[INDEX_0], y: pos[INDEX_1], z: pos[INDEX_2], a: pos[INDEX_3], b: pos[INDEX_4], c: pos[INDEX_5] },
+          { x: pos[INDEX_0], y: pos[INDEX_1], z: pos[INDEX_2], rz: pos[INDEX_3], ry: pos[INDEX_4], rx: pos[INDEX_5] },
         );
+
         if (checkDataBeforeMoving({ ...object }) && motionManager && positionManager) {
           const isSolutionSpace = positionManager.getSolutionSpace();
           motionManager?.moveJointPosx(
@@ -318,10 +227,7 @@ export default function VisionPose({ moduleContext, IvisionPose, onPoseChange, s
           );
         }
       }
-
     }
-
-
   }
 
 
@@ -358,7 +264,7 @@ export default function VisionPose({ moduleContext, IvisionPose, onPoseChange, s
     sendMessageTCP(message);
 
   }
-  
+
 
   return (
     <FormControl disabled={false} className={`${styles["option-contents"]} ${styles["calibration"]}`}>
@@ -383,46 +289,46 @@ export default function VisionPose({ moduleContext, IvisionPose, onPoseChange, s
 
         </AccordionSummary>
         <AccordionDetails>
-          <TextField id='visionpose_t1' value={IvisionPose[0]}  
-           onChange={(event) => onChangeTask(event, INDEX_0)} 
+          <TextField id='visionpose_t1' value={IvisionPose[0]}
+           onChange={(event) => onChangeTask(event, INDEX_0)}
            onBlur={handleBlur} disabled={false} size={"small"} type={"number"} className={styles["desc-textfield"]}
             InputProps={{
               startAdornment: <InputAdornment position={"start"}>X</InputAdornment>,
               endAdornment: <InputAdornment position={"end"}>mm</InputAdornment>,
             }} />
-          <TextField id='visionpose_t2' value={IvisionPose[1]}  
-           onChange={(event) => onChangeTask(event, INDEX_1)} 
+          <TextField id='visionpose_t2' value={IvisionPose[1]}
+           onChange={(event) => onChangeTask(event, INDEX_1)}
            onBlur={handleBlur} disabled={false} size={"small"} type={"number"} className={styles["desc-textfield"]}
             InputProps={{
               startAdornment: <InputAdornment position={"start"}>Y</InputAdornment>,
               endAdornment: <InputAdornment position={"end"}>mm</InputAdornment>,
             }} />
-          <TextField id='visionpose_t3' value={IvisionPose[2]}  
-           onChange={(event) => onChangeTask(event, INDEX_2)} 
+          <TextField id='visionpose_t3' value={IvisionPose[2]}
+           onChange={(event) => onChangeTask(event, INDEX_2)}
            onBlur={handleBlur} disabled={false} size={"small"} type={"number"} className={styles["desc-textfield"]}
             InputProps={{
               startAdornment: <InputAdornment position={"start"}>Z</InputAdornment>,
               endAdornment: <InputAdornment position={"end"}>mm</InputAdornment>,
             }} />
           <TextField id='visionpose_t4' value={IvisionPose[3]}
-           onChange={(event) => onChangeTask(event, INDEX_3)} 
+           onChange={(event) => onChangeTask(event, INDEX_3)}
           onBlur={handleBlur} disabled={false} size={"small"} type={"number"} className={styles["desc-textfield"]}
             InputProps={{
-              startAdornment: <InputAdornment position={"start"}>Rz</InputAdornment>,
+              startAdornment: <InputAdornment position={"start"}>RZ</InputAdornment>,
               endAdornment: <InputAdornment position={"end"}>°</InputAdornment>,
             }} />
-          <TextField id='visionpose_t5' value={IvisionPose[4]}  
-           onChange={(event) => onChangeTask(event, INDEX_4)} 
+          <TextField id='visionpose_t5' value={IvisionPose[4]}
+           onChange={(event) => onChangeTask(event, INDEX_4)}
           onBlur={handleBlur} disabled={false} size={"small"} type={"number"} className={styles["desc-textfield"]}
             InputProps={{
-              startAdornment: <InputAdornment position={"start"}>Ry</InputAdornment>,
+              startAdornment: <InputAdornment position={"start"}>RY</InputAdornment>,
               endAdornment: <InputAdornment position={"end"}>°</InputAdornment>,
             }} />
-          <TextField id='visionpose_t6' value={IvisionPose[5]}  
-           onChange={(event) => onChangeTask(event, INDEX_5)} 
+          <TextField id='visionpose_t6' value={IvisionPose[5]}
+           onChange={(event) => onChangeTask(event, INDEX_5)}
           onBlur={handleBlur} disabled={false} size={"small"} type={"number"} className={styles["desc-textfield"]}
             InputProps={{
-              startAdornment: <InputAdornment position={"start"}>Rz</InputAdornment>,
+              startAdornment: <InputAdornment position={"start"}>RX</InputAdornment>,
               endAdornment: <InputAdornment position={"end"}>°</InputAdornment>,
             }} />
         </AccordionDetails>

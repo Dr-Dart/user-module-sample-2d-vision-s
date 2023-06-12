@@ -64,6 +64,17 @@ Regenerate response
 #### Improved
 * Reduced the number of excessive database calls.
 
+### [1.0.2] - Updates
+
+#### Fixed
+* Bug that prevented building has been fixed.
+
+#### Changed
+* The display of Euler angles in ZYZ on the screen has been changed to ZYX.
+* The ZYZ change values in DRL_Sub_Detection.ts have been changed to ZYX.
+
+
+
 ## *Usage*
 #### In this Module, you can
 * Perform camera connection tests.
@@ -105,7 +116,7 @@ Regenerate response
         7. In order, add Pos X, Pos Y, Angle Z, and Detect Result. (After this, when you trigger the coordinate, the result comes in the order of [pos, Pos X, Pos Y, Angle Z, Detect Result].)
     + Start Sensor
         1. Make sure to press the 'Start Sensor' button. If you do not press it, the result will come as Fail even if you send a command.
-- Since the camera is calibrated in Euler XYZ, rotation values will be displayed in XYZ when triggered. When the module receives this, it converts Euler XYZ into Euler ZYZ for display on the screen. When the robot operates and moves to the offset pose, it also converts from Euler XYZ to Euler ZYZ for movement.
+- Since the camera is calibrated in Euler XYZ, rotation values will be displayed in XYZ when triggered. When the module receives this, it converts Euler XYZ into Euler ZYX for display on the screen. When the robot operates and moves to the offset pose, it also converts from Euler XYZ to Euler ZYX for movement.
 
 2. **[DRL Generator in Dart-IDE]** 
 <br>-You cannot use drl files created by DRL Generator. Currently, it should be used as a string like `drl/DRL_Calibration_run.ts`. It will be improved in the release version.

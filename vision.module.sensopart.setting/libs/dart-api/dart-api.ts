@@ -11,6 +11,265 @@ const packageName = (() => {
     }
 })();
 
+
+// [START] THEME API /////////////////////////
+/**
+ * Declare for @mui/material/Button
+ * - https://mui.com/material-ui/api/button
+ *
+ * @api-version 1
+ * @user
+ */
+declare module '@mui/material/Button' {
+    /**
+     * An interface to override Button's 'variant' props.
+     *
+     * @api-version 1
+     * @user
+     */
+    interface ButtonPropsVariantOverrides {
+        /**
+         * A variant of a button intended for long press.
+         *
+         * @api-version 1
+         * @user
+         */
+        longPressed: true;
+    }
+}
+/**
+ * Declare for @mui/material/ToggleButton
+ * - https://mui.com/material-ui/api/toggle-button
+ *
+ * @api-version 1
+ * @user
+ */
+declare module '@mui/material/ToggleButton' {
+    /**
+     * An interface to override ToggleButton's 'color' props.
+     *
+     * @api-version 1
+     * @user
+     */
+    interface ToggleButtonPropsColorOverrides {
+        /**
+         * A color of a toggle button intended for used to provide information that is not important to the user.
+         *
+         * @api-version 1
+         * @user
+         */
+        standard: true;
+    }
+}
+/**
+ * Declare for @mui/material/Checkbox
+ * - https://mui.com/material-ui/api/checkbox
+ *
+ * @api-version 1
+ * @user
+ */
+declare module '@mui/material/Checkbox' {
+    /**
+     * An interface to override Checkbox's 'color' props.
+     *
+     * @api-version 1
+     * @user
+     */
+    interface CheckboxPropsColorOverrides {
+        /**
+         * A color of a checkbox intended for used to provide information that is not important to the user.
+         *
+         * @api-version 1
+         * @user
+         */
+        standard: true;
+    }
+}
+/**
+ * Declare for @mui/material/Radio
+ * - https://mui.com/material-ui/api/radio
+ *
+ * @api-version 1
+ * @user
+ */
+declare module '@mui/material/Radio' {
+    /**
+     * An interface to override Radio's 'color' props.
+     *
+     * @api-version 1
+     * @user
+     */
+    interface RadioPropsColorOverrides {
+        /**
+         * A color of a radio intended for used to provide information that is not important to the user.
+         *
+         * @api-version 1
+         * @user
+         */
+        standard: true;
+    }
+}
+/**
+ * Declare for @mui/material/Switch
+ * - https://mui.com/material-ui/api/switch
+ *
+ * @api-version 1
+ * @user
+ */
+declare module '@mui/material/Switch' {
+    /**
+     * An interface to override Switch's 'color' props.
+     *
+     * @api-version 1
+     * @user
+     */
+    interface SwitchPropsColorOverrides {
+        /**
+         * A color of a switch intended for used to provide information that is not important to the user.
+         *
+         * @api-version 1
+         * @user
+         */
+        standard: true;
+    }
+}
+/**
+ * Declare for @mui/material/CircularProgress
+ * - https://mui.com/material-ui/api/circular-progress
+ *
+ * @api-version 1
+ * @user
+ */
+declare module '@mui/material/CircularProgress' {
+    /**
+     * An interface to override CircularProgress's 'color' props.
+     *
+     * @api-version 1
+     * @user
+     */
+    interface CircularProgressPropsColorOverrides {
+        /**
+         * A color of a circular progress intended for used to provide information that is not important to the user.
+         *
+         * @api-version 1
+         * @user
+         */
+        standard: true;
+    }
+}
+/**
+ * Declare for @mui/material/LinearProgress
+ * - https://mui.com/material-ui/api/linear-progress
+ *
+ * @api-version 1
+ * @user
+ */
+declare module '@mui/material/LinearProgress' {
+    /**
+     * An interface to override LinearProgress's 'color' props.
+     *
+     * @api-version 1
+     * @user
+     */
+    interface LinearProgressPropsColorOverrides {
+        /**
+         * A color of a linear progress intended for used to provide information that is not important to the user.
+         *
+         * @api-version 1
+         * @user
+         */
+        standard: true;
+    }
+}
+/**
+ * Declare for @mui/material/InputBase
+ * - https://mui.com/material-ui/api/input-base
+ *
+ * @api-version 1
+ * @user
+ */
+declare module '@mui/material/InputBase' {
+    /**
+     * An interface to override InputBase's 'color' props.
+     *
+     * @api-version 1
+     * @user
+     */
+    interface InputBasePropsColorOverrides {
+        /**
+         * A color of a inputbase intended for used to provide information that is not important to the user.
+         *
+         * @api-version 1
+         * @user
+         */
+        standard: true;
+    }
+}
+/**
+ * Declare for @mui/material/TextField
+ * - https://mui.com/material-ui/api/text-field
+ *
+ * @api-version 1
+ * @user
+ */
+declare module '@mui/material/TextField' {
+    /**
+     * An interface to override TextField's 'color' props.
+     *
+     * @api-version 1
+     * @user
+     */
+    interface TextFieldPropsColorOverrides {
+        /**
+         * A color of a text field intended for used to provide information that is not important to the user.
+         *
+         * @api-version 1
+         * @user
+         */
+        standard: true;
+    }
+}
+/**
+ * Declare for @mui/material/SvgIcon
+ * - https://mui.com/material-ui/api/svg-icon
+ *
+ * @api-version 1
+ * @user
+ */
+declare module '@mui/material/SvgIcon' {
+    /**
+     * An interface to override SvgIcon's 'color' props.
+     *
+     * @api-version 1
+     * @user
+     */
+    interface SvgIconPropsColorOverrides {
+        /**
+         * A color of a svg icon intended for used to represent primary icon elements for a user.
+         *
+         * @api-version 1
+         * @user
+         */
+        main: true;
+        /**
+         * A color of a svg icon intended for used to represent secondary icon elements for a user.
+         *
+         * @api-version 1
+         * @user
+         */
+        sub: true;
+        /**
+         * A color of a svg icon intended for used to represent emphasis icon elements for a user.
+         *
+         * @api-version 1
+         * @user
+         */
+        point: true;
+    }
+}
+// [END] THEME API /////////////////////////
+
+
 // [START] DRAS API /////////////////////////
 /**
  * An array of numbers of size 2.
@@ -47,6 +306,7 @@ export type SixNumArray = [number, number, number, number, number, number];
  * @api-version 1
  * @user
  */
+export type EightNumArray = [number, number, number, number, number, number, number, number];
 export type eigthNumArray = [number, number, number, number, number, number, number, number];
 /**
  * An array of numbers of size 9.
@@ -86,11 +346,15 @@ export type TwoThreeNumArray = [ThreeNumArray, ThreeNumArray];
 export type ThreeSixNumArray = [SixNumArray, SixNumArray, SixNumArray];
 /**
  * Input parameter of the setRemoteControl API.
- * Array of io mapping function trigger information of size 8.
+ * Array of io mapping function trigger information of size 10.
  * @api-version 1
  * @user
  */
-export type ConfigIoFunctionList = [ConfigIoFunction,ConfigIoFunction,ConfigIoFunction,ConfigIoFunction,ConfigIoFunction,ConfigIoFunction,ConfigIoFunction,ConfigIoFunction];
+ export type ConfigIoFunctionList = [ConfigIoFunction, ConfigIoFunction
+                                    , ConfigIoFunction, ConfigIoFunction
+                                    , ConfigIoFunction, ConfigIoFunction
+                                    , ConfigIoFunction, ConfigIoFunction
+                                    , ConfigIoFunction, ConfigIoFunction];
 
 /**
  * Property data of safety zone.
@@ -427,7 +691,7 @@ export type LocalZonePropertySpeedRate = {
     /**
      * Speed rate.
      * @api-version 1
-     * @user
+     * @system
      */
     speedRate: number,
 }
@@ -804,7 +1068,7 @@ export type Line2D = {
 /**
  * The point in the 3-dimensions.
  * @api-version 1
- * @system
+ * @user
  */
 export type Point3D = {
     /**
@@ -830,7 +1094,7 @@ export type Point3D = {
 /**
  * The point in the 2-dimensions
  * @api-version 1
- * @system
+ * @user
  */
 export type Point2D = {
     /**
@@ -900,7 +1164,7 @@ export type ConveyorRobotDigitalOut = {
  * @api-version 1
  * @user
  */
- export type FlangeVersion = {
+export type FlangeVersion = {
     /**
      * Flnage hardware version. (0xFF: old, Mseries: 0xBE, Aseries: 0xDE)
      * @api-version 1
@@ -950,33 +1214,40 @@ export type EthernetIpData = {
  */
 export const AuthorityState = {
     /**
-     * Requested to transfer from controller
+     * Received a request to transfer a control authority.
      *
      * @api-version 1
      * @user
      */
     REQUEST: 0,
     /**
-     * Denied about requests for transferring authority.
+     * Denied to request to transfer a control authority.
      *
      * @api-version 1
      * @user
      */
     DENY: 1,
     /**
-     * Granted authority
+     * Granted a control authority.
      *
      * @api-version 1
      * @user
      */
     GRANT: 2,
     /**
-     * Loss authority
+     * Loss a control authority.
      *
      * @api-version 1
      * @user
      */
-    LOSS: 3
+    LOSS: 3,
+    /**
+     * Transferring a control authority.
+     *
+     * @api-version 1
+     * @user
+     */
+    TRANSFERRING: 4
 } as const;
 /**
  * @ignore
@@ -1145,12 +1416,12 @@ export type RobotState = typeof RobotState[keyof typeof RobotState];
  */
 export const PowerManageTarget = {
     /**
-     * Inverter Power off
+     * Safety board Power off(include inverter, controller)
      *
      * @api-version 1
      * @system
      */
-    INVERTER: 0,
+    SAFETYBOARD: 0,
     /**
      * Controller Power off
      *
@@ -1315,47 +1586,47 @@ export const SafetyMode = {
      * @api-version 1
      * @user
      */
-     MANUAL: 0,
-     /**
-      * Auto Mode
-      * (자동 모드)
-      *
-      * @api-version 1
-      * @user
-      */
-     AUTO: 1,
-     /**
-      * Recovery Mode
-      * (복구 모드)
-      *
-      * @api-version 1
-      * @user
-      */
-     RECOVERY: 2,
-     /**
-      * Backdrive Mode
-      * (백드라이브 모드)
-      *
-      * @api-version 1
-      * @user
-      */
-     BACK_DRIVE: 3,
-     /**
-      * Measure Mode
-      * (측정 모드)
-      *
-      * @api-version 1
-      * @user
-      */
-     MEASURING: 4,
-     /**
-      * Initial Mode
-      * (초기 모드)
-      *
-      * @api-version 1
-      * @user
-      */
-     INITIAL: 5
+    MANUAL: 0,
+    /**
+     * Auto Mode
+     * (자동 모드)
+     *
+     * @api-version 1
+     * @user
+     */
+    AUTO: 1,
+    /**
+     * Recovery Mode
+     * (복구 모드)
+     *
+     * @api-version 1
+     * @user
+     */
+    RECOVERY: 2,
+    /**
+     * Backdrive Mode
+     * (백드라이브 모드)
+     *
+     * @api-version 1
+     * @user
+     */
+    BACK_DRIVE: 3,
+    /**
+     * Measure Mode
+     * (측정 모드)
+     *
+     * @api-version 1
+     * @user
+     */
+    MEASURING: 4,
+    /**
+     * Initial Mode
+     * (초기 모드)
+     *
+     * @api-version 1
+     * @user
+     */
+    INITIAL: 5
 } as const;
 /**
  * @ignore
@@ -1378,22 +1649,22 @@ export const SafetyModeEvent = {
      * @api-version 1
      * @system
      */
-     ENTER: 0,
-     /**
-      * Execution
-      * (실행)
-      *
-      * @api-version 1
-      * @system
-      */
-     MOVE: 1,
-     /**
-      * Complete
-      * (완료)
-      *
-      * @api-version 1
-      * @system
-      */
+    ENTER: 0,
+    /**
+     * Execution
+     * (실행)
+     *
+     * @api-version 1
+     * @system
+     */
+    MOVE: 1,
+    /**
+     * Complete
+     * (완료)
+     *
+     * @api-version 1
+     * @system
+     */
     STOP: 2
 } as const;
 /**
@@ -1769,7 +2040,7 @@ export type GpioAnalogType = typeof GpioAnalogType[keyof typeof GpioAnalogType];
  * @api-version 1
  * @user
  */
- export const FlangeAnalogPinMode = {
+export const FlangeAnalogPinMode = {
     /**
      * RS485
      *
@@ -2310,6 +2581,13 @@ export const ProgramState = {
      * @user
      */
     HOLD: 3,
+    /**
+     * Program Cancelled State
+     *
+     * @api-version 1
+     * @user
+     */
+    CANCELLED: 4,
 } as const;
 /**
  * @ignore
@@ -2490,6 +2768,106 @@ export const JointAxis = {
  * @ignore
  */
 export type JointAxis = typeof JointAxis[keyof typeof JointAxis];
+
+
+/**
+ * Enumeration constants that mean jog axis.
+ *
+ * @enum
+ * @api-version 1
+ * @user
+ */
+export const JogAxis = {
+    /**
+     * J1 Axis
+     *
+     * @api-version 1
+     * @user
+    */
+    J1: 1,
+    /**
+     * J2 Axis
+     *
+     * @api-version 1
+     * @user
+    */
+    J2: 2,
+    /**
+     * J3 Axis
+     *
+     * @api-version 1
+     * @user
+    */
+    J3: 3,
+    /**
+     * J4 Axis
+     *
+     * @api-version 1
+     * @user
+    */
+    J4: 4,
+    /**
+     * J5 Axis
+     *
+     * @api-version 1
+     * @user
+    */
+    J5: 5,
+    /**
+     * J6 Axis
+     *
+     * @api-version 1
+     * @user
+    */
+    J6: 6,
+    /**
+     * X-axis translation of TCP.
+     *
+     * @api-version 1
+     * @user
+    */
+    TX: 1,
+    /**
+     * Y-axis translation of TCP.
+     *
+     * @api-version 1
+     * @user
+    */
+    TY: 2,
+    /**
+     * Z-axis translation of TCP.
+     *
+     * @api-version 1
+     * @user
+    */
+    TZ: 3,
+    /**
+     * X-axis rotation of TCP.
+     *
+     * @api-version 1
+     * @user
+    */
+    RX: 4,
+    /**
+     * Y-axis rotation of TCP.
+     *
+     * @api-version 1
+     * @user
+    */
+    RY: 5,
+    /**
+     * Z-axis rotation of TCP.
+     *
+     * @api-version 1
+     * @user
+    */
+    RZ: 6,
+} as const;
+/**
+ * @ignore
+ */
+export type JogAxis = typeof JogAxis[keyof typeof JogAxis];
+
 
 /**
  * Internal and external enumerated constants when querying controller IP.
@@ -2912,26 +3290,26 @@ export type ExternalForceMonitoringData = {
      */
     z: number,
     /**
-    * Rz element of external force
-    *
-    * @api-version 1
-    * @user
-    */
-    a: number,
+     * RX element of external force
+     *
+     * @api-version 1
+     * @user
+     */
+    rx: number,
     /**
-     * Ry element of external force
+     * RY element of external force
      *
      * @api-version 1
      * @user
      */
-    b: number,
-        /**
-     * Rz element of external force
+    ry: number,
+    /**
+     * RZ element of external force
      *
      * @api-version 1
      * @user
      */
-    c: number,
+    rz: number,
 }
 
 /**
@@ -4422,9 +4800,9 @@ export type EthernetIpMonitoring = {
  * @api-version 1
  * @user
  */
- export type TaskPose = {
+export type TaskPose = {
     /**
-     * Robot Task space pose. (X, Y, Z, A, B, C)
+     * Robot Task space pose. (X, Y, Z, RZ, RY, RX)
      *
      * @api-version 1
      * @user
@@ -4502,7 +4880,7 @@ export type SafetyZoneType = typeof SafetyZoneType[keyof typeof SafetyZoneType];
  * @api-version 1
  * @user
  */
- export type TcpCommunicationMonitoringData = {
+export type TcpCommunicationMonitoringData = {
     /**
      * The uniqueId of server socket.
      *
@@ -4521,30 +4899,30 @@ export type SafetyZoneType = typeof SafetyZoneType[keyof typeof SafetyZoneType];
 
 
 
-     /**
-      * Total data length
-      *
-      * @api-version 1
-      * @user
-      */
-      totalLength: number,
+    /**
+     * Total data length
+     *
+     * @api-version 1
+     * @user
+     */
+    totalLength: number,
 
-      /**
-       * Current sequence no of data stream
-       *
-       * @api-version 1
-       * @user
-       */
-      currentSequenceNo: number,
+    /**
+     * Current sequence no of data stream
+     *
+     * @api-version 1
+     * @user
+     */
+    currentSequenceNo: number,
 
 
-      /**
-       * Last sequence no of data stream
-       *
-       * @api-version 1
-       * @user
-       */
-      endSequenceNo: number,
+    /**
+     * Last sequence no of data stream
+     *
+     * @api-version 1
+     * @user
+     */
+    endSequenceNo: number,
 
     /**
      * The recieved data.
@@ -4571,7 +4949,7 @@ export type StoreAuthenticationData = {
  *
  * @api-version 1
  * @user
-*/
+ */
 export type FrameworkModulePackageInfo = {
     /**
      * Package name
@@ -4835,13 +5213,12 @@ export const FrameworkModuleStatus = {
  */
 export type FrameworkModuleStatus = typeof FrameworkModuleStatus[keyof typeof FrameworkModuleStatus];
 
-
 /**
  * TCP Comm Result
  *
  * @api-version 1
  * @user
-*/
+ */
 export type TcpCommunicationResult = {
     /**
      * return value
@@ -4865,7 +5242,7 @@ export type TcpCommunicationResult = {
  *
  * @api-version 1
  * @user
-*/
+ */
 export type SerialCommunicationResult = {
     /**
      * return value
@@ -4884,14 +5261,13 @@ export type SerialCommunicationResult = {
     uniqueId: number
 }
 
-
 /**
  * System Version Information
  *
  * @api-version 1
  * @user
  */
- export type SystemVersionInfo = {
+export type SystemVersionInfo = {
     /**
      * Package Version Information
      *
@@ -4978,7 +5354,7 @@ export type SerialCommunicationResult = {
      */
     system: string,
 
-     /**
+    /**
      * OS Information
      *
      * @api-version 1
@@ -5011,6 +5387,268 @@ export type SerialCommunicationResult = {
     cockpit: CockpitType
 }
 
+/**
+ * Enumeration constant for robot checksum state
+ *
+ * @enum
+ * @api-version 1
+ * @user
+ */
+export const ChecksumState = {
+    /**
+     * state of matched normal & safety data
+     *
+     * @api-version 1
+     * @user
+     */
+    MATCHED_DATA: 0,
+    /**
+     * state of unmatched normal data state
+     *
+     * @api-version 1
+     * @user
+     */
+    UNMATCHED_NORMAL_DATA: 1,
+    /**
+     * state of unmatched safety data
+     *
+     * @api-version 1
+     * @user
+     */
+    UNMATCHED_SAFETY_DATA: 2,
+} as const;
+/**
+ * @ignore
+ */
+export type ChecksumState = typeof ChecksumState[keyof typeof ChecksumState];
+
+/**
+ * State of Mode Changed Callback
+ *
+ * @api-version 1
+ * @user
+ */
+ export const ModeChangeState = {
+    /**
+     * Enter recovery mode.
+     *
+     * @api-version 1
+     * @user
+     */
+    ENTER_RECOVERY_MODE: 0,
+    /**
+     * Enter backdrive mode
+     *
+     * @api-version 1
+     * @user
+     */
+    ENTER_BACKDRIVE_MODE: 1,
+    /**
+     * Mode off
+     *
+     * @api-version 1
+     * @user
+     */
+    MODE_OFF: 2,
+} as const;
+/**
+ * @ignore
+ */
+export type ModeChangeState = typeof ModeChangeState[keyof typeof ModeChangeState];
+
+
+/**
+ * enumulation of remote control command
+ *
+ * @api-version 1
+ * @user
+ */
+ export const RemoteControlCommand = {
+    /**
+     * unknown state
+     *
+     * @api-version 1
+     * @user
+     */
+    UNKNOWN: 0,
+
+    /**
+     * servo on
+     *
+     * @api-version 1
+     * @user
+     */
+    SERVO_ON: 1,
+    /**
+     * program start
+     *
+     * @api-version 1
+     * @user
+     */
+    PROGRAM_START: 2,
+    /**
+     * program stop
+     *
+     * @api-version 1
+     * @user
+     */
+    PROGRAM_STOP:3,
+    /**
+     * program pause
+     *
+     * @api-version 1
+     * @user
+     */
+    PROGRAM_PAUSE:4,
+    /**
+     * program resume
+     *
+     * @api-version 1
+     * @user
+     */
+    PROGRAM_RESUME:5,
+    /**
+     * power on
+     *
+     * @api-version 1
+     * @user
+     */
+    POWER_ON:6,
+    /**
+     * power off
+     *
+     * @api-version 1
+     * @user
+     */
+    POWER_OFF:7,
+} as const;
+/**
+ * @ignore
+ */
+export type RemoteControlCommand = typeof RemoteControlCommand[keyof typeof RemoteControlCommand];
+
+
+/**
+ * Supported functions are different for each robot model.
+ * A list of robot functions and whether they are supported.
+ *
+ * @api-version 1
+ * @user
+ */
+export type RobotFeatureList = {
+    /**
+    * Whether the FTS sensor is present.
+    *
+    * @api-version 1
+    * @user
+    */
+    FTS: boolean,
+    /**
+    * Whether the JTS sensor is present.
+    *
+    * @api-version 1
+    * @user
+    */
+    JTS: boolean,
+    /**
+    * Whether the free motion type direct teaching is available
+    *
+    * @api-version 1
+    * @user
+    */
+    FreeTeaching: boolean,
+    /**
+    * Whether the constraints motion type direct teaching is available
+    *
+    * @api-version 1
+    * @user
+    */
+    ConstraintsTeaching: boolean,
+    /**
+    * Whether collision detection is possible.
+    *
+    * @api-version 1
+    * @user
+    */
+    CollisionDetection: boolean,
+    /**
+    * Whether or not the installation posture measurement function is supported.
+    *
+    * @api-version 1
+    * @user
+    */
+    MeasureInstallPose: boolean,
+    /**
+    * Whether or not the tool weight measurement function is supported.
+    *
+    * @api-version 1
+    * @user
+    */
+    MeasureToolWeight: boolean,
+    /**
+    * Whether the friction coefficient measurement function is supported.
+    *
+    * @api-version 1
+    * @user
+    */
+    MeasureFriction: boolean,
+    /**
+    * Whether nudge is supported
+    *
+    * @api-version 1
+    * @user
+    */
+    Nudge: boolean,
+    /**
+    * Whether cockpit is supported
+    *
+    * @api-version 1
+    * @user
+    */
+    Cockpit: boolean,
+    /**
+    * Whether force control is available
+    *
+    * @api-version 1
+    * @user
+    */
+    ForceControl: boolean,
+    /**
+    * Whether compliance control is available
+    *
+    * @api-version 1
+    * @user
+    */
+    ComplianceControl: boolean,
+    /**
+    * Whether the force monitoring is supported.
+    *
+    * @api-version 1
+    * @user
+    */
+    ForceMonitoring: boolean,
+    /**
+    * Whether home mastering is needed
+    *
+    * @api-version 1
+    * @user
+    */
+    HomeMastering: boolean,
+    /**
+    * Whether it supports various installation postures.
+    *
+    * @api-version 1
+    * @user
+    */
+    VariousInstallPose: boolean,
+    /**
+    * Whether to support gravity compensation function.
+    *
+    * @api-version 1
+    * @user
+    */
+    GravityCompensation: boolean,
+}
 // [END] DRAS API /////////////////////////
 
 
@@ -5164,19 +5802,10 @@ export abstract class Context {
      * @user
      */
     static readonly ROBOT_PARAMETER_MANAGER = "RobotParameterManager";
-
-    /**
-     * Use with {@link getSystemManager} to retrieve {@link ILevelModeManager}.
-     *
-     * @api-version 1
-     * @user
-     */
-    static readonly LEVEL_MODE_MANAGER = "LevelModeManager";
     // [END] Robot Control System API /////////////////////////
 
 
     // [START] Hardware Control System API /////////////////////////
-
     /**
      * Use with {@link getSystemManager} to retrieve {@link INetworkManager}.
      *
@@ -5203,12 +5832,12 @@ export abstract class Context {
      */
     static readonly SAFETYPASSWORD_MANAGER = "SafetyPasswordManager";
     /**
-     * Use with {@link getSystemManager} to retrieve {@link IUpdateManager}.
+     * Use with {@link getSystemManager} to retrieve {@link IUpdateAndRestoreManager}.
      *
      * @api-version 1
      * @system
      */
-    static readonly UPDATE_MANAGER = "UpdateManager";
+    static readonly UPDATE_AND_RESTORE_MANAGER = "UpdateAndRestoreManager";
     /**
      * Use with {@link getSystemManager} to retrieve {@link IResetAndRestoreManager}.
      *
@@ -5216,6 +5845,13 @@ export abstract class Context {
      * @system
      */
     static readonly RESET_RESTORE_MANAGER = "ResetAndRestoreManager";
+    /**
+     * Use with {@link getSystemManager} to retrieve {@link IUserManager}.
+     *
+     * @api-version 1
+     * @user
+     */
+    static readonly USER_MANAGER = "UserManager";
     // [END] Etc Control System API /////////////////////////
 
 
@@ -5255,6 +5891,14 @@ export abstract class Context {
      * @user
      */
     static readonly DART_DATABASE = "dart_database";
+    /**
+     * Use with {@link getSystemLibrary} to retrieve {@link IDartProcess}.ts
+     * The library provide APIs to control process.
+     *
+     * @api-version 1
+     * @system
+     */
+    static readonly DART_PROCESS = "dart_process";
     /**
      * Use with {@link getSystemLibrary} to retrieve {@link IMathLibrary}.
      *
@@ -5311,14 +5955,13 @@ export abstract class Context {
      * - {@link MEASURE_MANAGER}
      * - {@link APPLICATION_MANAGER}
      * - {@link ROBOT_PARAMETER_MANAGER}
-     * - {@link LEVEL_MODE_MANAGER}
-     * - {@link DIALOG_MANAGER}
-     * - {@link RESET_RESTORE_MANAGER}
      * - {@link NETWORK_MANAGER}
-     * - {@link DART_IDE_MANAGER}
      * - {@link CONFIGURATION_MANAGER}
      * - {@link SAFETYPASSWORD_MANAGER}
-     * - {@link UPDATE_MANAGER}
+     * - {@link UPDATE_AND_RESTORE_MANAGER}
+     * - {@link RESET_RESTORE_MANAGER}
+     * - {@link USER_MANAGER}
+     * - {@link DART_IDE_MANAGER}
      *
      * @param name The name of the desired manager.
      * @return The manager or {@link null} if there is no manager which is matched with the name.
@@ -5335,6 +5978,7 @@ export abstract class Context {
      * - {@link DART_FILE_SYSTEM}
      * - {@link DART_FILE_PICKER}
      * - {@link DART_DATABASE}
+     * - {@link DART_PROCESS}
      * - {@link MATH_LIBRARY}
      *
      * @param name The name of the desired library.
@@ -5899,26 +6543,33 @@ export abstract class Panel {
          */
         TOAST:                      0x1600,
         /**
-         * Panel for Safety such as Emergency Stop, Protective Stop, etc.
+         * Panel for Special popup such as Emergency Stop, Protective Stop, etc.
          *
          * @api-version 1
          * @user
          */
-        SAFETY:                     0x1700,
+        SPECIAL:                    0x1700,
+        /**
+         * Panel for System's full screen such as Factory reset, Data export / import, etc.
+         *
+         * @api-version 1
+         * @user
+         */
+        SYSTEM_FULL_SCREEN:         0x1800,
         /**
          * Panel for System Connection.
          *
          * @api-version 1
          * @user
          */
-        SYSTEM_CONNECTION:          0x1800,
+        SYSTEM_CONNECTION:          0x1900,
         /**
          * Panel for System error such as Connection Error, Version Mismatch, etc.
          *
          * @api-version 1
          * @user
          */
-        SYSTEM_ERROR:               0x1900
+        SYSTEM_ERROR:               0x1A00
     } as const;
 }
 
@@ -5937,7 +6588,7 @@ export interface OnShowListener {
      * @api-version 1
      * @user
      */
-    onShow(dialog: IDialog): void;
+    onShow(dialog: DialogInterface): void;
 }
 
 /**
@@ -5955,7 +6606,7 @@ export interface OnCancelListener {
      * @api-version 1
      * @user
      */
-    onCancel (dialog: IDialog): void;
+    onCancel (dialog: DialogInterface): void;
 }
 
 /**
@@ -5973,7 +6624,7 @@ export interface OnDismissListener {
      * @api-version 1
      * @user
      */
-    onDismiss(dialog: IDialog): void;
+    onDismiss(dialog: DialogInterface): void;
 }
 
 /**
@@ -5987,12 +6638,12 @@ export interface OnClickListener {
      * This method will be invoked when a button in the dialog is clicked.
      *
      * @param dialog the dialog that received the click
-     * @param which the button that was clicked (ex. {@link IDialog.BUTTON_POSITIVE}).
+     * @param which the button that was clicked (ex. {@link DialogInterface.BUTTON_POSITIVE}).
      *
      * @api-version 1
      * @user
      */
-    onClick(dialog: IDialog, which: number): void;
+    onClick(dialog: DialogInterface, which: number): void;
 }
 
 /**
@@ -6403,6 +7054,17 @@ export interface IDialog extends DialogInterface {
     setCancelable(cancelable: boolean): void;
 
     /**
+     * Set a background dim on the dialog.
+     * You cannot change a title view after call {@link IDialog.show}.
+     *
+     * @param enabled Set whether the background dim is enabled or not.
+     *
+     * @api-version 1
+     * @user
+     */
+    setBackgroundDim(enabled: boolean): void;
+
+    /**
      * Sets a listener to be invoked when the dialog is shown.
      *
      * @param listener The {@link OnShowListener} to use.
@@ -6441,7 +7103,8 @@ export interface IDialog extends DialogInterface {
      * - {@link Panel.TYPE.MODULE_POPUP_SCREEN}
      * - {@link Panel.TYPE.MODULE_FULL_SCREEN}
      * - {@link Panel.TYPE.SYSTEM_DIALOG}
-     * - {@link Panel.TYPE.SAFETY}
+     * - {@link Panel.TYPE.SPECIAL}
+     * - {@link Panel.TYPE.SYSTEM_FULL_SCREEN}
      * - {@link Panel.TYPE.SYSTEM_CONNECTION}
      * - {@link Panel.TYPE.SYSTEM_ERROR}
      *
@@ -6586,6 +7249,16 @@ export interface IDialogBuilder {
      * @user
      */
     setCancelable(cancelable: boolean): IDialogBuilder;
+
+    /**
+     * Set a background dim on the dialog.
+     *
+     * @param enabled Set whether the background dim is enabled or not.
+     *
+     * @api-version 1
+     * @user
+     */
+    setBackgroundDim(enabled: boolean): IDialogBuilder;
 
     /**
      * Sets a listener to be invoked when the dialog is shown.
@@ -6782,6 +7455,30 @@ export interface IBoardDialog extends DialogInterface {
     setCancelable(cancelable: boolean): void;
 
     /**
+     * Sets whether this dialog is draggable.
+     * It a dialog is set as draggable, then {@link setAnchor}, {@link setAlignment} and {@link setCancelable} will be ignored.
+     * You cannot change a dialog size after call {@link IBoardDialog.show}.
+     *
+     * @param draggable Whether the dialog is draggable.
+     * @param defaultPosition The [x, y] position at which the popup screen will be displayed. If is not set, then the dialog will be positioned at center.
+     *
+     * @api-version 1
+     * @system
+     */
+    setDraggable(draggable: boolean, defaultPosition?: { x?: number, y?: number }): void;
+
+    /**
+     * Set a background dim on the dialog.
+     * You cannot change a title view after call {@link IBoardDialog.show}.
+     *
+     * @param enabled Set whether the background dim is enabled or not.
+     *
+     * @api-version 1
+     * @user
+     */
+    setBackgroundDim(enabled: boolean): void;
+
+    /**
      * Sets a listener to be invoked when the dialog is shown.
      *
      * @param listener The {@link OnShowListener} to use.
@@ -6820,7 +7517,8 @@ export interface IBoardDialog extends DialogInterface {
      * - {@link Panel.TYPE.MODULE_POPUP_SCREEN}
      * - {@link Panel.TYPE.MODULE_FULL_SCREEN}
      * - {@link Panel.TYPE.SYSTEM_DIALOG}
-     * - {@link Panel.TYPE.SAFETY}
+     * - {@link Panel.TYPE.SPECIAL}
+     * - {@link Panel.TYPE.SYSTEM_FULL_SCREEN}
      * - {@link Panel.TYPE.SYSTEM_CONNECTION}
      * - {@link Panel.TYPE.SYSTEM_ERROR}
      *
@@ -6987,6 +7685,28 @@ export interface IBoardDialogBuilder {
     setCancelable(cancelable: boolean): IBoardDialogBuilder;
 
     /**
+     * Sets whether this dialog is draggable.
+     * It a dialog is set as draggable, then {@link setAnchor}, {@link setAlignment} and {@link setCancelable} will be ignored.
+     *
+     * @param draggable Whether the dialog is draggable.
+     * @param defaultPosition The [x, y] position at which the popup screen will be displayed. If is not set, then the dialog will be positioned at center.
+     *
+     * @api-version 1
+     * @system
+     */
+    setDraggable(draggable: boolean, defaultPosition?: { x?: number, y?: number }): IBoardDialogBuilder;
+
+    /**
+     * Set a background dim on the dialog.
+     *
+     * @param enabled Set whether the background dim is enabled or not.
+     *
+     * @api-version 1
+     * @user
+     */
+    setBackgroundDim(enabled: boolean): IBoardDialogBuilder;
+
+    /**
      * Sets a listener to be invoked when the dialog is shown.
      *
      * @param listener The {@link OnShowListener} to use.
@@ -7082,6 +7802,270 @@ export abstract class IToast {
      * @user
      */
     abstract show(type: number, title: string | null, message: string, preventDuplicated?: boolean): void;
+}
+
+/**
+ * Interface used to handle a snackbar.
+ *
+ * @api-version 1
+ * @user
+ */
+export interface SnackbarInterface {
+    /**
+     * Set a title text.
+     * If user set a text as null or empty then the title view's area will be gone.
+     *
+     * @param text A text to display in the title.
+     *
+     * @api-version 1
+     * @user
+     */
+    setTitle(text: string | null): void;
+
+    /**
+     * Set a message. The message is mandatory, so it couldn't be empty.
+     *
+     * @param text A text to display in the content.
+     *
+     * @api-version 1
+     * @user
+     */
+    setMessage(text: string): void;
+
+    /**
+     * Get current progress. If progress is not set as 'determinate' then it will be return 0 always.
+     *
+     * @return A value of the current progress.
+     *
+     * @api-version 1
+     * @user
+     */
+    getProgress(): number;
+
+    /**
+     * Set a value of the progress indicator for the determinate. Value between 0 and 100.
+     * It is applied when only the snackbar has been set a progressbar as 'determinate' through {@link ISnackbarBuilder.setProgress}.
+     *
+     * @param progress A value of the progress indicator for the determinate. Value between 0 and 100.
+     *
+     * @api-version 1
+     * @user
+     */
+    setProgress(progress: number): void;
+
+    /**
+     * Dismisses the snackbar.
+     *
+     * @api-version 1
+     * @user
+     */
+    dismiss(): void;
+}
+
+/**
+ * Interface used to handle a snackbar.
+ *
+ * @api-version 1
+ * @user
+ */
+export module SnackbarInterface {
+    /**
+     * Information message type.
+     *
+     * @api-version 1
+     * @user
+     */
+    export const TYPE_INFO = 0;
+
+    /**
+     * Warning message type.
+     *
+     * @api-version 1
+     * @user
+     */
+    export const TYPE_WARN = 1;
+
+    /**
+     * Error message type.
+     *
+     * @api-version 1
+     * @user
+     */
+    export const TYPE_ERROR = 2;
+
+    /**
+     * Success message type.
+     *
+     * @api-version 1
+     * @user
+     */
+    export const TYPE_SUCCESS = 3;
+}
+
+/**
+ * Interface used to allow the creator of a snackbar to run some code when action button is clicked.
+ *
+ * @api-version 1
+ * @user
+ */
+export interface OnActionClickListener {
+    /**
+     * This method will be invoked when an action button in the snackbar is clicked.
+     *
+     * @param snackbar the snackbar that received the click
+     *
+     * @api-version 1
+     * @user
+     */
+    onClick(snackbar: SnackbarInterface): void;
+}
+
+/**
+ * Interface used to allow the creator of a snackbar to run some code when the snackbar is dismissed.
+ *
+ * @api-version 1
+ * @user
+ */
+export interface OnSnackbarDismissListener {
+    /**
+     * This method will be invoked when the snackbar is dismissed.
+     *
+     * @param snackbar the snackbar that received the event.
+     *
+     * @api-version 1
+     * @user
+     */
+    onDismiss(snackbar: SnackbarInterface): void;
+}
+
+/** @inheritDoc ISnackbar */
+// @ts-ignore
+export const Snackbar = (() => window.Snackbar)() as ISnackbar;
+/**
+ * A class to display message as Snackbar.
+ *
+ * @api-version 1
+ * @user
+ */
+export abstract class ISnackbar {
+    /**
+     * Show a snackbar.
+     *
+     * @api-version 1
+     * @user
+     */
+    abstract show(builder: ISnackbarBuilder): SnackbarInterface | null;
+}
+
+/** @inheritDoc ISnackbar */
+// @ts-ignore
+export const SnackbarBuilder = (() => window.SnackbarBuilder)() as (new <T extends ISnackbarBuilder>(context: Context) => T);
+/**
+ * A class to build a snackbar.
+ *
+ * @api-version 1
+ * @user
+ */
+export interface ISnackbarBuilder {
+    /**
+     * Set a snackbar type.
+     * Available types are:
+     * - {@link SnackbarInterface.TYPE_INFO}
+     * - {@link SnackbarInterface.TYPE_WARN}
+     * - {@link SnackbarInterface.TYPE_ERROR}
+     * - {@link SnackbarInterface.TYPE_SUCCESS}
+     *
+     * @param type A type of snackbar.
+     *
+     * @api-version 1
+     * @user
+     */
+    setType(type: number): ISnackbarBuilder;
+
+    /**
+     * Set a title text
+     *
+     * @param text A text to display in the title.
+     *
+     * @api-version 1
+     * @user
+     */
+    setTitle(text: string): ISnackbarBuilder;
+
+    /**
+     * Set a message. The message is mandatory, so it couldn't be empty.
+     *
+     * @param text A text to display in the content.
+     *
+     * @api-version 1
+     * @user
+     */
+    setMessage(text: string): ISnackbarBuilder;
+
+    /**
+     * Set an action button.
+     *
+     * @param text A text to display in the button.
+     * @param enabled True if this view is enabled, false otherwise.
+     * @param listener This method will be invoked when an action button in the snackbar is clicked.
+     *
+     * @api-version 1
+     * @user
+     */
+    setActionButton(text: string, enabled: boolean, listener: OnActionClickListener): ISnackbarBuilder;
+
+    /**
+     * Set a progressbar. If this is set, then {@link @mui/material/LinearProgress} will be shown in the snackbar.
+     *
+     * @param determinate Whether allows to enable the indeterminate mode or determinate.
+     * @param progress Default progress value. Value between 0 and 100. It is work on only determinate mode.
+     *
+     * @api-version 1
+     * @user
+     */
+    setProgress(determinate: boolean, progress: number): ISnackbarBuilder;
+
+    /**
+     * Set a close button in the snackbar.
+     * The button is shown at top right corner in the snackbar.
+     *
+     * @param enabled Set whether the close button is enabled or not.
+     *
+     * @api-version 1
+     * @user
+     */
+    setCloseButton(enabled: boolean): ISnackbarBuilder;
+
+    /**
+     * Set whether to persistently display snackbar.
+     * The Snackbar by default stays on for 3 seconds and then disappears.
+     *
+     * @param persistent Set whether to persistently display snackbar.
+     *
+     * @api-version 1
+     * @user
+     */
+    setPersistent(persistent: boolean): ISnackbarBuilder;
+
+    /**
+     * Set whether to prevent duplicated snackbar.
+     *
+     * @param preventDuplicated Ignores displaying multiple snackbars with the same 'type', 'title' and 'message'.
+     *
+     * @api-version 1
+     * @user
+     */
+    setPreventDuplicated(preventDuplicated: boolean): ISnackbarBuilder;
+
+    /**
+     * Sets a listener to be invoked when the snackbar is dismissed.
+     *
+     * @param listener The {@link OnSnackbarDismissListener} to use.
+     *
+     * @api-version 1
+     * @user
+     */
+    setOnDismissListener(listener: OnSnackbarDismissListener): ISnackbarBuilder;
 }
 // [END] UI /////////////////////////
 
@@ -7237,14 +8221,6 @@ export class Manifest {
      */
     static readonly FRAMEWORK_SUB_TYPE = {
         /**
-         * 'TCP Modbus Slave' module in Communication type module.
-         *
-         * @api-version 1
-         * @user
-         */
-        MODBUS: "TCPModbusSlave",
-
-        /**
          * 'TCP' type module in Communication type module.
          *
          * @api-version 1
@@ -7261,31 +8237,31 @@ export class Manifest {
         SERIAL: "Serial",
 
         /**
-         * 'Serial' module in Communication type module.
+         * 'Modbus' module in Communication type module.
          *
          * @api-version 1
          * @user
          */
-        FOCAS: "FOCAS",
+        MODBUS: "Modbus",
 
         /**
-         * 'Admittance' module in Control type module.
+         * 'ModbusIO' module in Communication type module.
          *
          * @api-version 1
          * @user
          */
-        ADMITTANCE: "AdmittanceControl",
+        MODBUS_IO: "ModbusIO",
 
         /**
-         * 'Impedance' module in Control type module.
+         * 'Force/Compliance' module in Control type module.
          *
          * @api-version 1
          * @user
          */
-        IMPEDANCE: "ImpedanceControl",
+        FORCE_COMPLIANCE : "Force/Compliance",
 
         /**
-         * 'Others' module in Control type module.
+         * 'Others' module.
          *
          * @api-version 1
          * @user
@@ -8686,15 +9662,6 @@ export interface IModulePackageInfo {
     readonly requiredPackageNames: string[];
 
     /**
-     * The value of executableOperationLevel component info ({@link IModuleScreenInfo}).
-     * Comes from 'executableOperationLevel' of the manifest.json.
-     *
-     * @api-version 1
-     * @user
-     */
-    readonly executableOperationLevel: string[];
-
-    /**
      * The type of the module package. Comes from 'type' of the manifest.json.
      * Available types are:
      * - {@link Manifest.USER_TYPE.HOME}
@@ -8774,15 +9741,6 @@ export interface IModulePackageInfo {
      * @user
      */
     readonly isEssentialPackage: boolean;
-
-    /**
-     * Whether the module package is dev package or not.
-     * It will be set as true if the package has been installed from Dart-IDE.
-     *
-     * @api-version 1
-     * @user
-     */
-    readonly isDevPackage: boolean;
 
     /**
      * A directory path where is installed the module package.
@@ -9782,34 +10740,6 @@ export type LogAlarm = {
 };
 
 /**
- * INetworkManager checks the state of being able to connect to an external network.
- *
- * @api-version 1
- * @user
- */
-export interface INetworkManager extends ISystemManager {
-
-    /**
-     * Check Network Connection
-     *
-     * @return  Result: If the network is available, return true, or false.
-     *
-     * @api-version 1
-     * @user
-     */
-    isNetworkAvailable(): Promise<boolean>;
-
-    /**
-     * Check URL Reachable
-     *
-     * @return  Result: If the URL is reachable, return true, or false.
-     *
-     * @api-version 1
-     * @user
-     */
-     isReachableURL(url:string): Promise<boolean>;
-}
-/**
  * IMotionManager have motion api in Robot.
  * For example, servoOn(), systemShutDown(), reboot() etc...
  *
@@ -9837,7 +10767,7 @@ export interface IMotionManager extends ISystemManager {
      * @api-version 1
      * @user
      */
-    jogControl(type: RobotSpace, axis: number, moveReference: number, velocity: number): Promise<boolean>;
+    jogControl(type: RobotSpace, axis: JogAxis, moveReference: number, velocity: number): Promise<boolean>;
 
     /**
      * Jog Motion Stop
@@ -9892,7 +10822,7 @@ export interface IMotionManager extends ISystemManager {
     /**
      * (movel) linear moving function
      *
-     * @param targetPose set six positions(x,y,z,a,b,c)
+     * @param targetPose set six positions(x,y,z,rz,ry,rx)
      * @param targetVelocity set two velocity (Linear velocity, Rotational velocity)
      * @param targetAcceleration set two acceleration (Linear acceleration, Rotational acceleration)
      * @param targetTime sets arrival time [sec]
@@ -9925,7 +10855,7 @@ export interface IMotionManager extends ISystemManager {
      * (movejx) Joint moving function from Task Pose.
      * Moves the robot to the target position within the joint area with robot controller. The target position moves same as the movel as it is the location within the workspace. However, because the robot motion acts inside the joint area, the straight path to the target position cannot be guaranteed. Additionally, one of the 8 robot configurations that responds to one work space coordinate, must be assigned to the solutionSpace (solution space).
      *
-     * @param targetPose sets six positions(x,y,z,a,b,c)
+     * @param targetPose sets six positions(x,y,z,rz,ry,rx)
      * @param solutionSpace sets solution space (0 ~ 7)
      * @param targetVelocity sets two velocity (Linear, Rotational)
      * @param targetAcceleration sets two acceleration (Linear, Rotational)
@@ -10003,9 +10933,9 @@ export interface IMotionManager extends ISystemManager {
     /**
      * (parallel_axis) This function matches the normal vector of the plane consists of Points.
      *
-     * @param targetPose1 set point(x,y,z,a,b,c)
-     * @param targetPose2 set point(x,y,z,a,b,c)
-     * @param targetPose3 set point(x,y,z,a,b,c)
+     * @param targetPose1 set point(x,y,z,rz,ry,rx)
+     * @param targetPose2 set point(x,y,z,rz,ry,rx)
+     * @param targetPose3 set point(x,y,z,rz,ry,rx)
      * @param taskAxis Refer to the Definition of Constant and Enumeration Type
      * @param sourceReference Refer to the Definition of Constant and Enumeration Type
      * @return Promise<boolean>
@@ -10018,9 +10948,9 @@ export interface IMotionManager extends ISystemManager {
     /**
      * (align_axis) This function matches the normal vector of the plane consists of Points.
      *
-     * @param targetPose1 set point(x,y,z,a,b,c)
-     * @param targetPose2 set point(x,y,z,a,b,c)
-     * @param targetPose3 set point(x,y,z,a,b,c)
+     * @param targetPose1 set point(x,y,z,rz,ry,rx)
+     * @param targetPose2 set point(x,y,z,rz,ry,rx)
+     * @param targetPose3 set point(x,y,z,rz,ry,rx)
      * @param sourceVector set normal vector
      * @param taskAxis Refer to the Definition of Constant and Enumeration Type
      * @param eTargetRef Refer to the Definition of Constant and Enumeration Type
@@ -10126,7 +11056,7 @@ export interface IMotionManager extends ISystemManager {
      * @api-version 1
      * @user
      */
-    jogControlH2R(type: RobotSpace, axis: number, moveReference: number, velocity: number): Promise<boolean>;
+    jogControlH2R(type: RobotSpace, axis: JogAxis, moveReference: number, velocity: number): Promise<boolean>;
 
     /**
      * Hold to run
@@ -10205,7 +11135,7 @@ export interface IMotionManager extends ISystemManager {
      * Hold to run
      * (movel) linear moving function
      *
-     * @param targetPose set six positions(x,y,z,a,b,c)
+     * @param targetPose set six positions(x,y,z,rz,ry,rx)
      * @param targetVelocity set two velocity (Linear, Rotational)
      * @param targetAcceleration set two acceleration (Linear, Rotational)
      * @param targetTime set time
@@ -10224,7 +11154,7 @@ export interface IMotionManager extends ISystemManager {
      * Hold to run
      * (movejx) Joint moving function from Task Pose
      *
-     * @param targetPose set six positions(x,y,z,a,b,c)
+     * @param targetPose set six positions(x,y,z,rz,ry,rx)
      * @param solutionSpace set solution space (0 ~ 7)
      * @param targetVelocity set two velocity (Linear, Rotational)
      * @param targetAcceleration set two acceleration (Linear, Rotational)
@@ -10244,9 +11174,9 @@ export interface IMotionManager extends ISystemManager {
      * Hold to run
      * (align_axis) This function matches the normal vector of the plane consists of Points.
      *
-     * @param targetPose1 set point(x,y,z,a,b,c)
-     * @param targetPose2 set point(x,y,z,a,b,c)
-     * @param targetPose3 set point(x,y,z,a,b,c)
+     * @param targetPose1 set point(x,y,z,rz,ry,rx)
+     * @param targetPose2 set point(x,y,z,rz,ry,rx)
+     * @param targetPose3 set point(x,y,z,rz,ry,rx)
      * @param sourceVector set normal vector
      * @param taskAxis Refer to the Definition of Constant and Enumeration Type
      * @param eTargetRef Refer to the Definition of Constant and Enumeration Type
@@ -10261,9 +11191,9 @@ export interface IMotionManager extends ISystemManager {
      * Hold to run
      * (parallel_axis) This function matches the normal vector of the plane consists of Points.
      *
-     * @param targetPose1 set point(x,y,z,a,b,c)
-     * @param targetPose2 set point(x,y,z,a,b,c)
-     * @param targetPose3 set point(x,y,z,a,b,c)
+     * @param targetPose1 set point(x,y,z,rz,ry,rx)
+     * @param targetPose2 set point(x,y,z,rz,ry,rx)
+     * @param targetPose3 set point(x,y,z,rz,ry,rx)
      * @param taskAxis Refer to the Definition of Constant and Enumeration Type
      * @param sourceReference Refer to the Definition of Constant and Enumeration Type
      * @return Promise<boolean>
@@ -10291,27 +11221,27 @@ export interface IMotionManager extends ISystemManager {
      *
      * @api-version 1
      * @user
-    */
+     */
     moveServoJointH2R(targetPose: SixNumArray, targetVelocity: SixNumArray, targetAcceleration: SixNumArray, targetTime: number): Promise<boolean>;
 
-     /**
-      * Hold to run
-      * (servol) linear moving function.
-      * Moves the robot from the current joint position to the targeted joint position.
-      * Generates the path of moving to corresponding task position even if the target changes every moment. Unlike movel, it is in order to instantly respond to outer environment change during the movement of robot from client to the robot controller.
-      *
-      * @param targetPose Six Task Space information (unit: mm/deg)
-      * @param targetVelocity Two speed information: Maximum Translation speed (mm/sec), Maximum Rotation speed (unit: deg/sec2  )
-      * @param targetAcceleration Acceleration information -Two acceleration information: Maximum Translation acceleration, and Maximum Rotation acceleration(unit: deg/sec2  )
-      * @param targetTime sets arrival time [sec]
-      *
-      * @return Promise<boolean>
-      *
-      * **Remarks**
-      * - When assigning targetTime, targetVelocity and targetAcceleration are ignored and instead handled based on the targetTime.
-      *
-      * @api-version 1
-      * @user
+    /**
+     * Hold to run
+     * (servol) linear moving function.
+     * Moves the robot from the current joint position to the targeted joint position.
+     * Generates the path of moving to corresponding task position even if the target changes every moment. Unlike movel, it is in order to instantly respond to outer environment change during the movement of robot from client to the robot controller.
+     *
+     * @param targetPose Six Task Space information (unit: mm/deg)
+     * @param targetVelocity Two speed information: Maximum Translation speed (mm/sec), Maximum Rotation speed (unit: deg/sec2  )
+     * @param targetAcceleration Acceleration information -Two acceleration information: Maximum Translation acceleration, and Maximum Rotation acceleration(unit: deg/sec2  )
+     * @param targetTime sets arrival time [sec]
+     *
+     * @return Promise<boolean>
+     *
+     * **Remarks**
+     * - When assigning targetTime, targetVelocity and targetAcceleration are ignored and instead handled based on the targetTime.
+     *
+     * @api-version 1
+     * @user
      */
     moveServoLinearH2R(targetPose: SixNumArray, targetVelocity: TwoNumArray, targetAcceleration: TwoNumArray, targetTime: number): Promise<boolean>;
 
@@ -10332,7 +11262,7 @@ export interface IMotionManager extends ISystemManager {
  * @api-version 1
  * @user
  */
- export interface IParameterItem<T> {
+export interface IParameterItem<T> {
     /**
      * {@link Monitorable} an item
      *
@@ -10670,7 +11600,7 @@ export interface IPositionManager extends ISystemManager {
      * Get Current Pose
      *
      * @param eSpaceType RobotSpace(Joint: 0, Task: 1)
-     * @return Promise<SixNumArray> get current joint/task pose (J1, J2, J3, J4, J5, J6)/(X, Y, Z, A, B, C)
+     * @return Promise<SixNumArray> get current joint/task pose (J1, J2, J3, J4, J5, J6)/(X, Y, Z, RZ, RY, RX)
      *
      * @api-version 1
      * @user
@@ -10690,7 +11620,7 @@ export interface IPositionManager extends ISystemManager {
     /**
      * Get Current Task Pose and Solution space
      *
-     * @return Promise<TaskPose> get current task pose (X, Y, Z, A, B, C), Solution Space
+     * @return Promise<TaskPose> get current task pose (X, Y, Z, RZ, RY, RX), Solution Space
      *
      * @api-version 1
      * @user
@@ -10700,7 +11630,7 @@ export interface IPositionManager extends ISystemManager {
     /**
      * Get Current Tool Position
      *
-     * @return SixNumArray get current Tool Position (X, Y, Z, A, B, C)
+     * @return SixNumArray get current Tool Position (X, Y, Z, RZ, RY, RX)
      *
      * @api-version 1
      * @user
@@ -10722,17 +11652,17 @@ export interface IPositionManager extends ISystemManager {
     getSolutionSpace(): SolutionSpace
 
     /**
-    * Calculate robot task space pose using joint space pose.
-    *
-    * @param sourcePose task space pose values
-    * @param solutionSpace robot configuration number. (0 ~ 7)
-    * @param targetReference The reference coordinate of task space pose values(input values)
-    *
-    * @return robot joint space pose values
-    *
-    * @api-version 1
-    * @user
-    */
+     * Calculate robot task space pose using joint space pose.
+     *
+     * @param sourcePose task space pose values
+     * @param solutionSpace robot configuration number. (0 ~ 7)
+     * @param targetReference The reference coordinate of task space pose values(input values)
+     *
+     * @return robot joint space pose values
+     *
+     * @api-version 1
+     * @user
+     */
     inverseKinematics(sourcePose: SixNumArray, solutionSpace: SolutionSpace, targetReference: CoordinateSystem): Promise<SixNumArray>
 
     /**
@@ -10751,7 +11681,7 @@ export interface IPositionManager extends ISystemManager {
     /**
      * Get Current Flange Position
      *
-     * @return SixNumArray get current Flange Position (X, Y, Z, A, B, C)
+     * @return SixNumArray get current Flange Position (X, Y, Z, RZ, RY, RX)
      *
      * @api-version 1
      * @user
@@ -10773,7 +11703,7 @@ export interface IPositionManager extends ISystemManager {
      * @param thickness 4th position
      * @param offsetValue offset for place position(X, Y, Z)
      *
-     * @return Promise<SixNumArray> Point of index  (X, Y, Z, A, B, C)
+     * @return Promise<SixNumArray> Point of index  (X, Y, Z, RZ, RY, RX)
      * Delivers the position information of joint zone which is calculated via the given 위치 information and offset information. This is a response to the calculation request on workzone position information.
      *
      * **Remarks**
@@ -10790,7 +11720,7 @@ export interface IPositionManager extends ISystemManager {
      * @param inputReference The reference coordinate system for targetPose.
      * @param outputReference The reference coordinate system for calculated pose.
      *
-     * @return Promise<SixNumArray> The pose w.r.t outputReference (X, Y, Z, A, B, C)
+     * @return Promise<SixNumArray> The pose w.r.t outputReference (X, Y, Z, RZ, RY, RX)
      *
      * @api-version 1
      * @user
@@ -10798,13 +11728,13 @@ export interface IPositionManager extends ISystemManager {
     coordTransform(targetPose: SixNumArray, inputReference:CoordinateSystem, outputReference: CoordinateSystem): Promise<SixNumArray>;
 
     /**
-    * Get CalculateCoordinate in Robot Parameters
-    *
-    * @return Promise<SixNumArray> or null
+     * Get CalculateCoordinate in Robot Parameters
      *
-    * @api-version 1
-    * @user
-    */
+     * @return Promise<SixNumArray> or null
+     *
+     * @api-version 1
+     * @user
+     */
     calculateCoordinate(data: CalculateCoordinate): Promise<SixNumArray | null>;
 
     /**
@@ -10814,23 +11744,23 @@ export interface IPositionManager extends ISystemManager {
      * @param sourceReference The reference coordinate system for sourcePose.
      * @param targetReference The reference coordinate system for calculated pose.
      *
-     * @return Promise<SixNumArray> The calculated pose w.r.t targetReference (X, Y, Z, A, B, C)
+     * @return Promise<SixNumArray> The calculated pose w.r.t targetReference (X, Y, Z, RZ, RY, RX)
      *
      * @api-version 1
      * @user
      */
     trans(sourcePose: SixNumArray, offset: SixNumArray, sourceReference: CoordinateSystem, eTargetRef: CoordinateSystem): Promise<SixNumArray>;
 
-     /**
+    /**
      * get base to target coordinate relationship.
      * @param target
      *
-     * @return Promise<SixNumArray> The base to target (X, Y, Z, A, B, C)
+     * @return Promise<SixNumArray> The base to target (X, Y, Z, Rz, Ry, RX)
      *
      * @api-version 1
      * @user
      */
-    getBaseToCoordinate(target: CoordinateSystem): Promise<SixNumArray | null>;
+    getBaseToCoordinate(target: CoordinateSystem): SixNumArray | null;
 }
 
 /**
@@ -11200,21 +12130,28 @@ export interface IRobotManager extends ISystemManager {
 
     /**
      * {@link Monitorable}
-     * RobotParameter checksum value of controller
+     * RobotParameter checksum value for robot controller both normal and safety data and status
+     * normal data : cockpit, user coordinates, normal input&output
+     * safety data : robot limits, safety stop mode, safety input&output, safety zone, tool center position, tool weight, tool shape, mount pose, nudge, world coordinate
+     * checksum : normal and safety data checksum of robot parameter data set on controller
+     * state : robot parameter file checksum is matched with robot parameter data set on controller
+     * 0: state of matched normal & safety data
+     * 1: state of unmatched normal data state
+     * 2: state of unmatched safety data
      *
      * @api-version 1
      * @user
      */
-    readonly robotChecksum: Monitorable<string>;
+    readonly robotChecksum: Monitorable<{checksum: string, state: ChecksumState}>;
 
     /**
-    * {@link Monitorable}
-    * robot motion speed. 0 to 100%
-    *
-    * @api-version 1
-    * @user
-    */
-   readonly operationSpeed:Monitorable<number>;
+     * {@link Monitorable}
+     * robot motion speed. 0 to 100%
+     *
+     * @api-version 1
+     * @user
+     */
+    readonly operationSpeed:Monitorable<number>;
 
     /**
      * {@link Monitorable} {@link RobotState}.
@@ -11280,6 +12217,31 @@ export interface IRobotManager extends ISystemManager {
      * @user
      */
     readonly protectiveSafeOff: Monitorable<boolean>;
+
+    /**
+     * {@link Monitorable}
+     * Indicates the state transition in the following two cases.
+     * 1. In case of an emergency, the combination of the Cockpit button converts the Safety Stop state to the Recovery Mode Direct Teaching state.
+     * 2. Entering back drive mode in Safe-Off state and forcibly switching to brake automatic release state.
+     *
+     * @api-version 1
+     * @user
+     */
+    readonly modeChanged: Monitorable<ModeChangeState>;
+    /**
+     * {@link Monitorable} Changed when the remote control mode is changed. If true, remote control mode.
+     *
+     * @api-version 1
+     * @user
+    */
+    readonly remoteControlModeChanged: Monitorable<boolean>;
+    /**
+     * {@link Monitorable} Notify that signal information has changed to I/O mapped to Remote Control command
+     *
+     * @api-version 1
+     * @user
+    */
+    readonly remoteControlCommand: Monitorable<RemoteControlCommand>;
 
     /**
      * Robot servo on function
@@ -11449,7 +12411,7 @@ export interface IRobotManager extends ISystemManager {
      * @api-version 1
      * @system
      */
-     getControllerSerialNumber(): string
+    getControllerSerialNumber(): string
 
     /**
      * Get controller IP Address
@@ -11615,6 +12577,50 @@ export interface IRobotManager extends ISystemManager {
      * @system
      */
     changeOperationSpeed(speed: number): Promise<boolean>
+
+    /**
+     * Search Serial Device List
+     *
+     * @summary Serial로 연결된 Device 장치 검색
+     * @return Return {@link SerialPortList}
+     *
+     * @api-version 1
+     * @user
+     */
+    getSerialPortList(): Promise<SerialPortList>;
+
+     /**
+     * During force control, the scale value is transmitted to change the force gain value.
+     *
+     * @param forceFactor force scale factor
+     * @param targetTime Time taken to set up.
+     *
+     * @api-version 1
+     * @user
+     */
+    setForceFactor(forceFactor:SixNumArray, targetTime:number): Promise<void>;
+
+     /**
+     * During force control, the scale value is transmitted to change the damping gain value.
+     *
+     * @param damping damping scale factor
+     * @param targetTime Time taken to set up.
+     *
+     * @api-version 1
+     * @user
+     */
+    setDampingFactor(dampingFactor:SixNumArray, targetTime:number): Promise<void>;
+
+     /**
+     * Supported functions are different for each robot model.
+     * return the list of robot functions and whether they are supported.
+     *
+     * @return Return {@link RobotFeatureList}
+     *
+     * @api-version 1
+     * @user
+     */
+    getSupportRobotFeatureList(): RobotFeatureList;
 }
 
 /**
@@ -11826,13 +12832,230 @@ export type InstallPose = {
  */
 export type SafetyIO = {
     /**
-     * Function information mapped to Safety io.
+     * Function information mapped to Safety input & output
      * @api-version 1
      * @user
      */
-    io: [TenNumArray, eigthNumArray];
+    io: [TenNumArray, EightNumArray];
 };
 
+export const SafetyInputValues = {
+    /**
+     * Protective Stop (STO) (L) : Safe Torque Off
+     *
+     * @api-version 1
+     * @user
+     */
+    PROTECTIVE_STOP_STO_LOW: 1,
+
+    /**
+     * Emergency Stop (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    EMERGENCY_STOP_LOW: 2,
+    /**
+     * Protective Stop (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    PROTECTIVE_STOP_LOW: 3,
+    /**
+     * Reduced Speed (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    REDUCED_SPEED_ACTIVATION_LOW: 4,
+    /**
+     * 3-pos Enable Switch (L to H & H)
+     *
+     * @api-version 1
+     * @user
+     */
+    POS_3_ENABLE_SWITCH_HIGH: 5,
+    /**
+     * Hand-guiding Enable Switch (L to H & H)
+     *
+     * @api-version 1
+     * @user
+     */
+    HAND_GUIDING_ENABLE_SWITCH_HIGH: 6,
+    /**
+     * Hand Guide Control End & Task Resume (L to H) : Auto Reset & Resume (Rising Edge)
+     *
+     * @api-version 1
+     * @user
+     */
+    HAND_GUIDING_END_TASK_RESUME_RISING_EDGE: 7,
+    /**
+     * Protective Stop (Auto Reset & Resume) (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    PROTECTIVE_STOP_LOW_AUTO_RESET_RESUME_RISING_EDGE: 8,
+    /**
+     * Safe Zone Dynamic Enable (H)
+     *
+     * @api-version 1
+     * @user
+     */
+    SAFETY_ZONE_DYNAMIC_ENABLE_HIGH: 9,
+    /**
+     * Remote Control Mode (H)
+     *
+     * @api-version 1
+     * @user
+     */
+    REMOTE_CONTROL_ENABLE_HIGH: 10,
+    /**
+     * Emergency Stop (No Loopback) (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    EMERGENCY_STOP_NO_LOOPBACK_LOW: 11,
+    /**
+     * Interlock Reset (L to H)
+     *
+     * @api-version 1
+     * @user
+     */
+    INTERLOCK_RESET_RISING_EDGE: 13,
+    /**
+     * Protective Stop (SS1) (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    PROTECTIVE_STOP_SS1_LOW: 14,
+    /**
+     * Protective Stop (SS2) (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    PROTECTIVE_STOP_SS2_LOW: 15,
+    /**
+     * Safety Zone Dynamic Enabled (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    SAFETY_ZONE_DYNAMIC_ENABLE_LOW: 16
+} as const;
+
+export const SafetyOutputValues = {
+    /**
+     * Safe Torque Off (STO) (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    SAFE_TORQUE_OFF_LOW: 1,
+
+    /**
+     * Safe Operating Stop (SOS)
+     *
+     * @api-version 1
+     * @user
+     */
+    SAFE_OPERATING_STOP_LOW: 2,
+    /**
+     * Normal Speed Status (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    NORMAL_SPEED_LOW: 4,
+    /**
+     * Reduced Speed Status (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    REDUCED_SPEED_LOW: 5,
+    /**
+     * Auto Mode (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    AUTO_MODE_LOW: 6,
+    /**
+     * Manual Mode (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    MANUAL_MODE_LOW: 7,
+    /**
+     * Standalone Zone (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    STANDALONE_ZONE_LOW: 8,
+    /**
+     * Collaborative Zone (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    COLLABORATIVE_ZONE_LOW: 9,
+    /**
+     * High Priority Zone(L)
+     *
+     * @api-version 1
+     * @user
+     */
+    HIGH_PRIORITY_ZONE_LOW: 10,
+    /**
+     * Tool Orientation Limited Zone (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    TOOL_ORIENTATION_LIMIT_ZONE_LOW: 11,
+    /**
+     * Emergency Stop (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    EMERGENCY_STOP_LOW: 12,
+    /**
+     * Emergency Stop (excl. No Loopback Input) (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    EMERGENCY_STOP_NO_LOOPBACK_INPUT_LOW: 13,
+    /**
+     * Designated Zone (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    DESIGNATED_ZONE_LOW: 15,
+    /**
+     * Remote Mode (L)
+     *
+     * @api-version 1
+     * @user
+     */
+    REMOTE_CONTROL_MODE_LOW: 17,
+    /**
+     * Abnormal(L)
+     *
+     * @api-version 1
+     * @user
+     */
+    ABNORMAL_LOW: 18,
+} as const;
 /**
  * Normal I/O in Robot Parameters
  *
@@ -12074,6 +13297,13 @@ export type CalculateCoordinate = {
  */
 export type RobotParameter = {
     /**
+     * Updated Date
+     *
+     * @api-version 1
+     * @user
+     */
+    updatedAt?: number;
+    /**
      * Joint Range
      *
      * @api-version 1
@@ -12247,7 +13477,7 @@ export type RobotParameter = {
      * @api-version 1
      * @user
      */
-     delUserCoordinate?: number[];
+    delUserCoordinate?: number[];
 };
 
 /**
@@ -12301,6 +13531,13 @@ export const RobotModel = { // ROBOT_MODEL
      */
     A0509S: "A0509S",
     /**
+     * A0509F(NSF)
+     *
+     * @api-version 1
+     * @user
+     */
+    A0509F: "A0509F",
+    /**
      * A0912
      *
      * @api-version 1
@@ -12314,6 +13551,13 @@ export const RobotModel = { // ROBOT_MODEL
      * @user
      */
     A0912S: "A0912S",
+    /**
+     * A0912F(NSF)
+     *
+     * @api-version 1
+     * @user
+     */
+    A0912F: "A0912F",
     /**
      * H2017
      *
@@ -12533,7 +13777,7 @@ export type FlangeAnalogIoAlias = {
  * @api-version 1
  * @user
  */
- export interface IParameterItem<T> {
+export interface IParameterItem<T> {
     /**
      * {@link Monitorable} an item
      *
@@ -12853,12 +14097,22 @@ export interface IRobotParameterManager extends ISystemManager {
      * Get robot parameter in db
      *
      * @param name robot parameter name
-     * @return Return <Promise> Fulfills with true if the request has been operated successfully, otherwise false.
+     * @return Return Robot Parameter {@link RobotParameter}
      *
      * @api-version 1
      * @system
      */
     get(name: string): Promise<RobotParameter | null>;
+
+    /**
+     * Get robot parameter in db
+     *
+     * @return Return robot parameter array {@link RobotParameter}
+     *
+     * @api-version 1
+     * @system
+     */
+    getAll(): Promise<{ name: string; data: RobotParameter }[]>;
 
     /**
      * remove robot parameter in db
@@ -13141,7 +14395,7 @@ export interface ICommunicationManager extends ISystemManager {
  * @api-version 1
  * @user
  */
- export interface ITcpIp {
+export interface ITcpIp {
     /**
      * {@link Monitorable}
      * Server socket message received
@@ -13209,7 +14463,7 @@ export interface ICommunicationManager extends ISystemManager {
      * @api-version 1
      * @user
      */
-     open(uniqueId: number, mode: TcpCommunicationMode, ipAddress:string, portIndex: number) : Promise<TcpCommunicationResult>;
+    open(uniqueId: number, mode: TcpCommunicationMode, ipAddress:string, portIndex: number) : Promise<TcpCommunicationResult>;
 
     /**
      * Close TCP comm
@@ -13220,7 +14474,7 @@ export interface ICommunicationManager extends ISystemManager {
      * @api-version 1
      * @user
      */
-     close(uniqueId: number) : Promise<TcpCommunicationResult>;
+    close(uniqueId: number) : Promise<TcpCommunicationResult>;
 
     /**
      * Query server information
@@ -13231,7 +14485,7 @@ export interface ICommunicationManager extends ISystemManager {
      * @api-version 1
      * @user
      */
-     queryServerInfo(uniqueId: number) : Promise<TcpCommunicationServerInfo>;
+    queryServerInfo(uniqueId: number) : Promise<TcpCommunicationServerInfo>;
 
     /**
      * Query server information
@@ -13243,7 +14497,7 @@ export interface ICommunicationManager extends ISystemManager {
      * @api-version 1
      * @user
      */
-     queryClientInfo(uniqueId: number, clientId: number) : Promise<TcpCommunicationClientInfo>;
+    queryClientInfo(uniqueId: number, clientId: number) : Promise<TcpCommunicationClientInfo>;
 
     /**
      * Write data using client socket
@@ -13257,17 +14511,17 @@ export interface ICommunicationManager extends ISystemManager {
      */
     sendToServer(uniqueId: number, data:Uint8Array|string): Promise<boolean>;
 
-     /**
-      * Write data using server socket
-      * @param uniqueID Unique id.
-      * @param clientID client id.
-      * @param data The data to be sent
-      *
-      * @return errorType: ErrorType, result: Fulfills with true if the request has been operated successfully, otherwise false.
-      *
-      * @api-version 1
-      * @user
-      */
+    /**
+     * Write data using server socket
+     * @param uniqueID Unique id.
+     * @param clientID client id.
+     * @param data The data to be sent
+     *
+     * @return errorType: ErrorType, result: Fulfills with true if the request has been operated successfully, otherwise false.
+     *
+     * @api-version 1
+     * @user
+     */
     sendToClient(uniqueID: number, clientId: number, data:Uint8Array|string): Promise<boolean>;
 }
 
@@ -13285,16 +14539,16 @@ export interface ISerial {
      * @api-version 1
      * @user
      */
-     readonly serialDataUpdated: Monitorable<{uniqueId:number, data:Uint8Array}>;
+    readonly serialDataUpdated: Monitorable<{uniqueId:number, data:Uint8Array}>;
 
-     /**
-      * {@link Monitorable}
-      * Serial Connection Status Updated
-      *
-      * @api-version 1
-      * @user
-      */
-     readonly serialConnectionStatusUpdated: Monitorable<{serialPort:string, status:number}>;
+    /**
+     * {@link Monitorable}
+     * Serial Connection Status Updated
+     *
+     * @api-version 1
+     * @user
+     */
+    readonly serialConnectionStatusUpdated: Monitorable<{serialPort:string, status:number}>;
 
 
     /**
@@ -13363,7 +14617,7 @@ export interface ISerial {
      * @api-version 1
      * @user
      */
-     open(uniqueId: number, serialPort: string, baudrate: number, byteSize: ByteSize, parityBit: ParityCheck, stopBit: StopBit, timeout:number) : Promise<SerialCommunicationResult>;
+    open(uniqueId: number, serialPort: string, baudrate: number, byteSize: ByteSize, parityBit: ParityCheck, stopBit: StopBit, timeout:number) : Promise<SerialCommunicationResult>;
 
     /**
      * Close the Serial communication port.
@@ -13374,7 +14628,7 @@ export interface ISerial {
      * @api-version 1
      * @user
      */
-     close(uniqueId: number) : Promise<SerialCommunicationResult>;
+    close(uniqueId: number) : Promise<SerialCommunicationResult>;
 
     /**
      * Query serial Comm information
@@ -13385,7 +14639,7 @@ export interface ISerial {
      * @api-version 1
      * @user
      */
-     queryCommInfo(uniqueId: number) : Promise<SerialCommunicationConfig>;
+    queryCommInfo(uniqueId: number) : Promise<SerialCommunicationConfig>;
 
     /**
      * Query all serial Comm information
@@ -13395,7 +14649,7 @@ export interface ISerial {
      * @api-version 1
      * @user
      */
-     queryAllCommInfo(): Promise<{result:number, count:number, serialConfig:SerialCommunicationConfig}>;
+    queryAllCommInfo(): Promise<{result:number, count:number, serialConfig:SerialCommunicationConfig}>;
 
     /**
      * Send data
@@ -13406,7 +14660,7 @@ export interface ISerial {
      * @api-version 1
      * @user
      */
-     write(uniqueId: number, serialData: Uint8Array|string) : Promise<SerialCommunicationResult>;
+    write(uniqueId: number, serialData: Uint8Array|string) : Promise<SerialCommunicationResult>;
 }
 
 /**
@@ -13418,7 +14672,7 @@ export interface ISerial {
  * @api-version 1
  * @user
  */
- export type FocasConnect = {
+export type FocasConnect = {
     /**
      * Error Code
      *
@@ -13559,7 +14813,7 @@ export type FocasPmcData = {
  * @api-version 1
  * @user
  */
- export type FocasPmc = {
+export type FocasPmc = {
     /**
      * Error Code
      *
@@ -13799,7 +15053,7 @@ export type FocasIsAlive = {
  * @api-version 1
  * @user
  */
- export interface IFocas {
+export interface IFocas {
     /**
      * Connect to FOCAS. Makes a communication connection with Machine tool by using FOCAS Library.
      *
@@ -13832,17 +15086,6 @@ export type FocasIsAlive = {
      * @user
      */
     readPmcData(params: FocasPmc): Promise<FocasPmc>;
-
-    /**
-     * Write pmc data of FOCAS. Delivers the PMC data writing request of Machine tool by using FOCAS Library.
-     *
-     * @param params {@link FocasPmc}
-     * @return Return <Promise> Fulfills with the {@link FocasPmc}.
-     *
-     * @api-version 1
-     * @user
-     */
-    writePmcData(params: FocasPmc): Promise<FocasPmc>;
 
     /**
      * Read cnc parameter of FOCAS
@@ -14221,7 +15464,7 @@ export interface IDigitalIO {
      * @api-version 1
      * @user
      */
-    readonly safetyInput: Monitorable<TwoNumArray>;
+    readonly safetyInput: Monitorable<ThreeNumArray>;
 
     /**
      * Flange's Input data
@@ -14253,23 +15496,23 @@ export interface IDigitalIO {
      * @api-version 1
      * @user
      */
-     readonly flangeOutputVoltage: Monitorable<GpioDigitalVoltage>;
+    readonly flangeOutputVoltage: Monitorable<GpioDigitalVoltage>;
 
-     /**
-      * Flange's Output X1 BJT Type
-      *
-      * @api-version 1
-      * @user
-      */
-     readonly flangeOutputX1Type: Monitorable<GpioDigitalType>;
+    /**
+     * Flange's Output X1 BJT Type
+     *
+     * @api-version 1
+     * @user
+     */
+    readonly flangeOutputX1Type: Monitorable<GpioDigitalType>;
 
-     /**
-      * Flange's Output X2 BJT Type
-      *
-      * @api-version 1
-      * @user
-      */
-     readonly flangeOutputX2Type: Monitorable<GpioDigitalType>;
+    /**
+     * Flange's Output X2 BJT Type
+     *
+     * @api-version 1
+     * @user
+     */
+    readonly flangeOutputX2Type: Monitorable<GpioDigitalType>;
 
     /**
      * get digital input signal On/Off info. (Flange)(0~5) / (Controller)(0~15)
@@ -14419,7 +15662,7 @@ export interface IAnalogIO {
      * @api-version 1
      * @user
      */
-     readonly flangeInputX1PinMode: Monitorable<FlangeAnalogPinMode>;
+    readonly flangeInputX1PinMode: Monitorable<FlangeAnalogPinMode>;
 
     /**
      * X2 Analog Input Pin Mode(Flange).
@@ -14427,7 +15670,7 @@ export interface IAnalogIO {
      * @api-version 1
      * @user
      */
-     readonly flangeInputX2PinMode: Monitorable<FlangeAnalogPinMode>;
+    readonly flangeInputX2PinMode: Monitorable<FlangeAnalogPinMode>;
 
     /**
      * get analog input value.
@@ -14537,19 +15780,19 @@ export interface IAnalogIO {
      * @api-version 1
      * @user
      */
-     getFlangeAnalogInputPinMode(pinIndex: GpioFlangePortIndex) : FlangeAnalogPinMode
+    getFlangeAnalogInputPinMode(pinIndex: GpioFlangePortIndex) : FlangeAnalogPinMode
 
     /**
-      * Set flange analog pin mode.
-      *
-      * @param pinIndex The port index to set the mode. {@link GpioFlangePortIndex}
-      * @param pinMode Mode type to set {@link FlangeAnalogPinMode}
-      * @return Return <Promise> Fulfills with an {@link FlangeAnalogPinMode}
-      *
-      * @api-version 1
-      * @system
-      */
-     setFlangeAnalogInputPinMode(pinIndex: GpioFlangePortIndex, pinMode: FlangeAnalogPinMode): Promise<boolean>
+     * Set flange analog pin mode.
+     *
+     * @param pinIndex The port index to set the mode. {@link GpioFlangePortIndex}
+     * @param pinMode Mode type to set {@link FlangeAnalogPinMode}
+     * @return Return <Promise> Fulfills with an {@link FlangeAnalogPinMode}
+     *
+     * @api-version 1
+     * @system
+     */
+    setFlangeAnalogInputPinMode(pinIndex: GpioFlangePortIndex, pinMode: FlangeAnalogPinMode): Promise<boolean>
 }
 
 /**
@@ -14668,6 +15911,13 @@ export type RunningProgramInfo = {
      * @user
      */
     packageName: string,
+    /**
+     * A screen's id who is requester of the running program.
+     *
+     * @api-version 1
+     * @user
+     */
+    screenId: string,
     /**
      * A timer to retrieve total and cycle time.
      *
@@ -14962,60 +16212,61 @@ export interface IProgramManager extends ISystemManager {
 }
 
 /**
- * Level Mode
+ * Types of user.
  *
  * @enum
  * @api-version 1
  * @user
  */
-export const LevelMode = {
+export const User = {
     /**
-     * manual level
+     * 'supervisor' user.
      *
      * @api-version 1
      * @user
      */
-    MANUAL_LEVEL: "manual",
+    SUPERVISOR: "supervisor",
 
     /**
-     * auto level
+     * 'operator' user.
      *
      * @api-version 1
      * @user
      */
-    AUTO_LEVEL: "auto",
+    OPERATOR: "operator",
 } as const;
 /**
  * @ignore
  */
-export type LevelMode = typeof LevelMode[keyof typeof LevelMode];
+export type User = typeof User[keyof typeof User];
 
 /**
- * ILevelModeManager have APIs for managing authority.
+ * IUserManager have APIs for managing users.
  *
  * @api-version 1
  * @user
  */
-export interface ILevelModeManager extends ISystemManager {
-
+export interface IUserManager extends ISystemManager {
     /**
-     * Level mode state Monitorable.
+     * {@link Monitorable} {@link User}.
      *
      * @api-version 1
      * @user
      */
-    readonly levelMode: Monitorable<LevelMode>;
+    readonly user: Monitorable<User>;
 
     /**
-     * Check if the module has access rights.
+     * Change user {@link User}.
      *
-     * @param executableOperationLevel module accessibility level.
-     * @return Returns true if the module can access the current level.
+     * @param user An user to change.
+     * @param customTitle A custom title. If it is not set, then default title will be displayed.
+     * @param customMessage A custom message. If it is not set, then default message will be displayed.
+     * @return Return <Promise> Fulfills with true if the user has been changed successfully, otherwise false.
      *
      * @api-version 1
-     * @user
+     * @system
      */
-    checkAccessAuthority(executableOperationLevel: string[]): boolean
+    changeUser(user: User, customTitle?: string, customMessage?: string): Promise<boolean>;
 }
 
 /**
@@ -15032,28 +16283,6 @@ export interface IAuthorityManager extends ISystemManager {
      * @user
      */
     readonly authorityState: Monitorable<AuthorityState>;
-
-    /**
-     * Request to get authority.
-     *
-     * @param force Whether get an authority by force.
-     * @return Return true if system was requested successfully, otherwise false.
-     *
-     * @api-version 1
-     * @system
-     */
-    requestAuthority(force: boolean): boolean
-
-    /**
-     * Response about requesting to transfer authority.
-     *
-     * @param transfer Whether allow to transfer my authority.
-     * @return Return true if system was sent response successfully, otherwise false.
-     *
-     * @api-version 1
-     * @system
-     */
-    responseToTransferAuthority(transfer: boolean): boolean
 }
 
 /**
@@ -15062,7 +16291,7 @@ export interface IAuthorityManager extends ISystemManager {
  * @api-version 1
  * @user
  */
- export interface IMeasureManager extends ISystemManager {
+export interface IMeasureManager extends ISystemManager {
     /**
      * Get robot install pose.
      * <br> This is integration version of auto measure command of robot installation pose information and Safety mode setting command. Measures and calculates the pose information that the robot is installed.
@@ -15338,7 +16567,7 @@ export type DigitalWeldingData = WeldingData & {
      * @api-version 1
      * @user
      */
-     option3: number,
+    option3: number,
     /**
      * Option 4
      *
@@ -15372,7 +16601,7 @@ export type DigitalWeldingData = WeldingData & {
      * @api-version 1
      * @user
      */
-     option8: number,
+    option8: number,
     /**
      * Option 9
      *
@@ -15478,6 +16707,34 @@ export interface IApplicationManager extends ISystemManager {
 
 
 // [START] Hardware Control System API /////////////////////////
+/**
+ * INetworkManager checks the state of being able to connect to an external network.
+ *
+ * @api-version 1
+ * @user
+ */
+export interface INetworkManager extends ISystemManager {
+
+    /**
+     * Check Network Connection
+     *
+     * @return  Result: If the network is available, return true, or false.
+     *
+     * @api-version 1
+     * @user
+     */
+    isNetworkAvailable(): Promise<boolean>;
+
+    /**
+     * Check URL Reachable
+     *
+     * @return  Result: If the URL is reachable, return true, or false.
+     *
+     * @api-version 1
+     * @user
+     */
+    isReachableURL(url:string): Promise<boolean>;
+}
 // [END] Hardware Control System API /////////////////////////
 
 
@@ -15854,6 +17111,28 @@ export interface IConfigurationManager {
      * @system
      */
     changeIdleServoOff(data: IdleServoOff): Promise<boolean>;
+
+    /**
+     * Change controller system time
+     *
+     * @param date data of current date
+     * @param time data of current time
+     * @return Returns whether the change was successful.
+     *
+     * @api-version 1
+     * @system
+     */
+    setControllerSystemTime(date: string, time: string): Promise<boolean>;
+
+    /**
+     * Get controller system time
+     *
+     * @return Return <Promise> Fulfills controller system time
+     *
+     * @api-version 1
+     * @system
+     */
+    getControllerSystemTime(): Promise<{ date: string, time: string }>;
 }
 
 /**
@@ -15864,17 +17143,40 @@ export interface IConfigurationManager {
  */
 export interface ISafetyPasswordManager {
     /**
+     * {@link Monitorable} safety password lock state.
+     *
+     * @api-version 1
+     * @user
+     */
+    readonly safetyPasswordLocked: Monitorable<boolean>;
+
+    /**
      * Confirm Safety password
      *
+     * @param context A caller's context
+     * @param force If the authentication procedure is required even if the password lock is unlocked, set force to true
      * @return Return password confirmation
      *
      * @api-version 1
      * @user
      */
-    safetyPasswordAuthentication(context: Context):Promise<boolean>;
+    safetyPasswordAuthentication(context: Context, force?: boolean):Promise<boolean>;
 
     /**
-     * Chagne Safety password
+     * Confirm Safety password.
+     *
+     * @param customTitle A custom title. If it is not set, then default title will be displayed.
+     * @param customMessage A custom message. If it is not set, then default message will be displayed.
+     * @param force If the authentication procedure is required even if the password lock is unlocked, set force to true
+     * @return Return <Promise> Fulfills with true if user authenticated safety password successfully, otherwise false.
+     *
+     * @api-version 1
+     * @user
+     */
+    authenticateSafetyPassword(customTitle: string | null, customMessage: string | null, force?: boolean): Promise<boolean>;
+
+    /**
+     * Change Safety password
      *
      * @return Return settings table update result
      *
@@ -15882,6 +17184,416 @@ export interface ISafetyPasswordManager {
      * @system
      */
     changeSafetyPassword(newPwd:string):Promise<boolean>;
+
+    /**
+     * Change Safety password lock state
+     *
+     * @api-version 1
+     * @system
+     */
+    setSafetyPasswordLock():Promise<void>;
+}
+
+/**
+ * This is an enumeration type constant that refers to state of system update and restore, and is defined as follows.
+ *
+ * @enum
+ * @api-version 1
+ * @system
+ */
+export const UpdateAndRestoreState = {
+    /**
+     * Idle.
+     *
+     * @api-version 1
+     * @system
+     */
+    IDLE: 0,
+    /**
+     * Check precondition to update.
+     *
+     * @api-version 1
+     * @system
+     */
+    CHECK_UPDATE_PRECONDITION: 0x0001_0001,
+    /**
+     * Verifying campaign to update.
+     *
+     * @api-version 1
+     * @system
+     */
+    VERIFYING_UPDATE_CAMPAIGN: 0x0001_0002,
+    /**
+     * Failed to verify.
+     *
+     * @api-version 1
+     * @system
+     */
+    FAILED_TO_VERIFY: 0x0001_0003,
+    /**
+     * Confirm to update.
+     *
+     * @api-version 1
+     * @system
+     */
+    CONFIRM_TO_UPDATE: 0x0001_0004,
+    /**
+     * Updating.
+     *
+     * @api-version 1
+     * @system
+     */
+    UPDATING: 0x0001_0005,
+    /**
+     * Success to update.
+     *
+     * @api-version 1
+     * @system
+     */
+    SUCCESS_TO_UPDATE: 0x0001_0006,
+    /**
+     * Failed to update.
+     *
+     * @api-version 1
+     * @system
+     */
+    FAILED_TO_UPDATE: 0x0001_0007,
+    /**
+     * Check precondition to restore.
+     *
+     * @api-version 1
+     * @system
+     */
+    CHECK_RESTORE_PRECONDITION: 0x0002_0001,
+    /**
+     * Confirm to restore.
+     *
+     * @api-version 1
+     * @system
+     */
+    CONFIRM_TO_RESTORE: 0x0002_0002,
+    /**
+     * Restoring.
+     *
+     * @api-version 1
+     * @system
+     */
+    RESTORING: 0x0002_0003,
+    /**
+     * Success to restore.
+     *
+     * @api-version 1
+     * @system
+     */
+    SUCCESS_TO_RESTORE: 0x0002_0004,
+    /**
+     * Failed to restore.
+     *
+     * @api-version 1
+     * @system
+     */
+    FAILED_TO_RESTORE: 0x0002_0005,
+} as const;
+/**
+ * @ignore
+ */
+export type UpdateAndRestoreState = typeof UpdateAndRestoreState[keyof typeof UpdateAndRestoreState];
+
+/**
+ * This is an enumeration type constant that refers to types of update package, and is defined as follows.
+ *
+ * @enum
+ * @api-version 1
+ * @system
+ */
+export const OtaPackageType = {
+    /**
+     * Application package.
+     *
+     * @api-version 1
+     * @system
+     */
+    APPLICATION: 0,
+    /**
+     * System package.
+     *
+     * @api-version 1
+     * @system
+     */
+    SYSTEM: 1,
+    /**
+     * OS package.
+     *
+     * @api-version 1
+     * @system
+     */
+    OS: 2
+} as const;
+/**
+ * @ignore
+ */
+export type OtaPackageType = typeof OtaPackageType[keyof typeof OtaPackageType];
+
+/**
+ * This is an enumeration type constant that refers to types of campaign download, and is defined as follows.
+ *
+ * @enum
+ * @api-version 1
+ * @system
+ */
+export const CampaignDownloadType = {
+    /**
+     * Download via TFTP.
+     *
+     * @api-version 1
+     * @system
+     */
+    TFTP: 0,
+    /**
+     * Located in controller.
+     *
+     * @api-version 1
+     * @system
+     */
+    LOCAL: 1,
+    /**
+     * Located in USB.
+     *
+     * @api-version 1
+     * @system
+     */
+    USB: 2,
+    /**
+     * Downloaded from OTA Server.
+     *
+     * @api-version 1
+     * @system
+     */
+    OTA_SERVER: 3
+} as const;
+/**
+ * @ignore
+ */
+export type CampaignDownloadType = typeof CampaignDownloadType[keyof typeof CampaignDownloadType];
+
+/**
+ * This is an enumeration type constant that refers to state of system update, and is defined as follows.
+ *
+ * @enum
+ * @api-version 1
+ * @system
+ */
+export const CampaignState = {
+    /**
+     * No available campaign.
+     *
+     * @api-version 1
+     * @system
+     */
+    IDLE: 0,
+    /**
+     * Has a downloadable campaign.
+     *
+     * @api-version 1
+     * @system
+     */
+    DOWNLOADABLE: 1,
+    /**
+     * Downloading a campaign.
+     *
+     * @api-version 1
+     * @system
+     */
+    DOWNLOADING: 2,
+    /**
+     * Has an updatable campaign.
+     *
+     * @api-version 1
+     * @system
+     */
+    UPDATABLE: 3,
+    /**
+     * Updating a campaign.
+     *
+     * @api-version 1
+     * @system
+     */
+    UPDATING: 4,
+    /**
+     * Updated a campaign successfully.
+     *
+     * @api-version 1
+     * @system
+     */
+    UPDATE_SUCCESS: 5,
+    /**
+     * Failed to update a campaign.
+     *
+     * @api-version 1
+     * @system
+     */
+    UPDATE_FAILED: 6
+} as const;
+/**
+ * @ignore
+ */
+export type CampaignState = typeof CampaignState[keyof typeof CampaignState];
+
+/**
+ * OTA Campaign Information
+ *
+ * @api-version 1
+ * @system
+ */
+ export type CampaignInfo = {
+    /**
+     * Campaign state.
+     *
+     * @api-version 1
+     * @system
+     */
+    state: CampaignState,
+    /**
+     * Campaign name.
+     *
+     * @api-version 1
+     * @system
+     */
+    campaignName: string,
+    /**
+     * Type of target package of the campaign.
+     *
+     * @api-version 1
+     * @system
+     */
+    targetPackages: OtaPackageType[],
+    /**
+     * Start Time. (ex. YYYY-MM-DD_hh:mm)
+     *
+     * @api-version 1
+     * @system
+     */
+    startTime: string,
+    /**
+     * End Time. (ex. YYYY-MM-DD_hh:mm)
+     *
+     * @api-version 1
+     * @system
+     */
+    endTime: string,
+    /**
+     * Application package version.
+     *
+     * @api-version 1
+     * @system
+     */
+    applicationPackageVersion: string,
+    /**
+     * System package version.
+     *
+     * @api-version 1
+     * @system
+     */
+    systemPackageVersion: string,
+    /**
+     * OS package version.
+     *
+     * @api-version 1
+     * @system
+     */
+    osPackageVersion: string,
+    /**
+     * The state of OTA server.
+     *
+     * @api-version 1
+     * @system
+     */
+    otaServerState: number,
+}
+
+/**
+ * Local Campaign (System package) Information
+ *
+ * @api-version 1
+ * @system
+ */
+export const LocalCampaignState = {
+    /**
+     * No available a local campaign file.
+     *
+     * @api-version 1
+     * @system
+     */
+    IDLE: 0,
+    /**
+     * Uploading a local campaign file.
+     *
+     * @api-version 1
+     * @system
+     */
+    UPLOADING: 1,
+    /**
+     * Uploaded a local campaign file.
+     *
+     * @api-version 1
+     * @system
+     */
+    UPLOADED: 2,
+    /**
+     * Updating a local campaign file.
+     *
+     * @api-version 1
+     * @system
+     */
+    UPDATING: 3
+} as const;
+/**
+ * @ignore
+ */
+export type LocalCampaignState = typeof LocalCampaignState[keyof typeof LocalCampaignState];
+
+/**
+ * Local Campaign Information
+ *
+ * @api-version 1
+ * @system
+ */
+export type LocalCampaignInfo = {
+    /**
+     * Campaign state.
+     *
+     * @api-version 1
+     * @system
+     */
+    state: LocalCampaignState,
+    /**
+     * Campaign file name.
+     *
+     * @api-version 1
+     * @system
+     */
+    fileName: string,
+    /**
+     * Campaign file path.
+     *
+     * @api-version 1
+     * @system
+     */
+    filePath: string,
+    /**
+     * Change note.
+     *
+     * @api-version 1
+     * @system
+     */
+    changeNote: null | { dpSdkVersion: string[], dpCompatibleSdks: string[], drasCompatibleSdks: string[], note: string[] } | { note: string[] };
+    /**
+     * Progress of uploading a local campaign.
+     *
+     * @api-version 1
+     * @system
+     */
+    progress: number;
 }
 
 /**
@@ -15890,17 +17602,145 @@ export interface ISafetyPasswordManager {
  * @api-version 1
  * @system
  */
-export interface IUpdateManager extends ISystemManager {
+export interface IUpdateAndRestoreManager extends ISystemManager {
     /**
-     * Update software.
-     *
-     * @param file The update file's data or path.
-     * @param fileName The update file's name.
+     * {@link Monitorable} update and restore state.
      *
      * @api-version 1
      * @system
      */
-    updateSoftware(file: string | Uint8Array, fileName: string): Promise<boolean>;
+    readonly updateAndRestoreState: Monitorable<UpdateAndRestoreState>;
+
+    /**
+     * {@link Monitorable} OTA campaign information.
+     *
+     * @api-version 1
+     * @system
+     */
+    readonly campaignInfo: Monitorable<CampaignInfo>;
+
+    /**
+     * {@link Monitorable} Local campaign information.
+     *
+     * @api-version 1
+     * @system
+     */
+    readonly localCampaignInfo: Monitorable<LocalCampaignInfo>;
+
+    /**
+     * {@link Monitorable} Whether to automatically download campaigns.
+     *
+     * @api-version 1
+     * @system
+     */
+    readonly autoDownloadCampaign: Monitorable<boolean>;
+
+    /**
+     * Set whether to automatically download campaigns.
+     *
+     * @param enabled True to auto-download campaigns.
+     * @return Return <Promise> Fulfills with true if the request has been operated successfully, otherwise false.
+     *
+     * @api-version 1
+     * @system
+     */
+    setAutoDownloadCampaignEnabled(enabled: boolean): Promise<boolean>;
+
+    /**
+     * Get change note of the desired package type on current version.
+     * The data is formatted as below:
+     * - application: { dpSdkVersion: string, dpCompatibleSdks: string[], drasCompatibleSdks: string[], note: string[] }
+     * - system: { note: string[] }
+     * - os: { note: string[] }
+     *
+     * @param type A desired type to retrieve a change note.
+     * @return Return <Promise> Fulfills with change note if the request has been operated successfully, otherwise empty string.
+     *
+     * @api-version 1
+     * @system
+     */
+    getChangeNote(type: OtaPackageType): Promise<null | { dpSdkVersion: string[], dpCompatibleSdks: string[], drasCompatibleSdks: string[], note: string[] } | { note: string[] }>;
+
+    /**
+     * Update OTA campaign information {@link CampaignInfo}.
+     *
+     * @return Return OTA Campaign Information
+     *
+     * @api-version 1
+     * @system
+     */
+    updateCampaignInformation(): Promise<boolean>;
+
+    /**
+     * Get a change note of the desired OTA package from a campaign.
+     * The data is formatted as below:
+     * - application: { dpSdkVersion: string, dpCompatibleSdks: string[], drasCompatibleSdks: string[], note: string[] }
+     * - system: { note: string[] }
+     * - os: { note: string[] }
+     *
+     * @param type A desired type to retrieve a change note.
+     * @return Return OTA Campaign Information
+     *
+     * @api-version 1
+     * @system
+     */
+    getCampaignChangeNote(type: OtaPackageType): Promise<null | { dpSdkVersion: string[], dpCompatibleSdks: string[], drasCompatibleSdks: string[], note: string[] } | { note: string[] }>;
+
+    /**
+     * Download a campaign.
+     *
+     * @param requestedFromSetting Whether it is requested from the Settings module.
+     * @return Return <Promise> Fulfills with true if the request has been operated successfully, otherwise false.
+     *
+     * @api-version 1
+     * @system
+     */
+    downloadCampaign(requestedFromSetting: boolean): Promise<boolean>;
+
+    /**
+     * Start an update process.
+     *
+     * @param campaignDownloadType A download type of the target campaign.
+     * @param requestedFromSetting Whether it is requested from the Settings module.
+     * @return Return <Promise> Fulfills with true if the request has been operated successfully, otherwise false.
+     *
+     * @api-version 1
+     * @system
+     */
+    startUpdateCampaign(campaignDownloadType: CampaignDownloadType, requestedFromSetting: boolean): Promise<boolean>;
+
+    /**
+     * Upload a local campaign file to controller.
+     *
+     * @param file The update file's data or path.
+     * @param fileName The update file's name.
+     * @return Return <Promise> Fulfills with true if the request has been operated successfully, otherwise false.
+     *
+     * @api-version 1
+     * @system
+     */
+    uploadLocalCampaignFile(file: string | Uint8Array, fileName: string): Promise<boolean>;
+
+    /**
+     * Cancel the local campaign file upload operation.
+     *
+     * @return Return <Promise> Fulfills with true if the request has been operated successfully, otherwise false.
+     *
+     * @api-version 1
+     * @system
+     */
+    cancelUploadLocalCampaignFile(): Promise<void>;
+
+    /**
+     * Delete the local campaign file from controller.
+     *
+     * @param fileName The file name to delete.
+     * @return Return <Promise> Fulfills with true if the request has been operated successfully, otherwise false.
+     *
+     * @api-version 1
+     * @system
+     */
+    deleteLocalCampaignFile(fileName: string): Promise<boolean>;
 }
 
 /**
@@ -16117,6 +17957,38 @@ export interface IDartFilePicker {
      * @system
      */
     showDirectoryPicker(options?: any | undefined): Promise<any>;
+}
+
+/**
+ * An interface to control process.
+ *
+ * @api-version 1
+ * @system
+ */
+export interface IDartProcess {
+    /**
+     * Exit the program.
+     *
+     * @api-version 1
+     * @system
+     */
+    exitApp(): void;
+
+    /**
+     * Reload the program.
+     *
+     * @api-version 1
+     * @system
+     */
+    reloadApp(): void;
+
+    /**
+     * Restart the program
+     *
+     * @api-version 1
+     * @system
+     */
+    restartApp(): void;
 }
 // [END] Libraries /////////////////////////
 

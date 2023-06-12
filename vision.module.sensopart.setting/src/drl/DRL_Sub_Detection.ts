@@ -370,8 +370,11 @@ def visor_robotic_trigger():
     if request_successful == True:
         pos, var_list =extract_data_from_bin_contour_answer(request_dictionary,',')
         eul = eulxyz2eulzyz([pos[3], pos[4], pos[5]])
-        tp_log("eul"+str(eul))
-        return [pos[0], pos[1],pos[2], eul[0], eul[1],eul[2]], var_list        
+        rpy = eul2rpy(eul)
+        tp_log("eulzyz"+str(eul))
+        tp_log("eulrpy"+str(rpy))
+
+        return [pos[0], pos[1],pos[2], rpy[0], rpy[1],rpy[2]], var_list        
     else:
         return -1,[]
         

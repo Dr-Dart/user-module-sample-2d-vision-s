@@ -156,7 +156,7 @@ export default function PickingPose({ moduleContext, IpickingPose, onPoseChange,
       console.log("pos", pos)
       const object = Object.assign(
         {},
-        { x: pos[INDEX_0], y: pos[INDEX_1], z: pos[INDEX_2], a: pos[INDEX_3], b: pos[INDEX_4], c: pos[INDEX_5] },
+        { x: pos[INDEX_0], y: pos[INDEX_1], z: pos[INDEX_2], rz: pos[INDEX_3], ry: pos[INDEX_4], rx: pos[INDEX_5] },
       );
 
 
@@ -200,10 +200,10 @@ export default function PickingPose({ moduleContext, IpickingPose, onPoseChange,
   function onChangeTask(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, type: number) {
 
     const value = parseFloat(event.target.value) || 0;
-    
+
     let tmp = [...IpickingPose] as SixNumArray;
     tmp[type] = value
-  
+
     onPoseChange(tmp);
 
   }
@@ -258,17 +258,17 @@ export default function PickingPose({ moduleContext, IpickingPose, onPoseChange,
             }} />
           <TextField id='pickingpose_t4' value={IpickingPose[3]} onChange={(event) => onChangeTask(event, INDEX_3)} onBlur={handleBlur} disabled={false} size={"small"} defaultValue={"0.00"} type={"number"} className={styles["desc-textfield"]}
             InputProps={{
-              startAdornment: <InputAdornment position={"start"}>Rz</InputAdornment>,
+              startAdornment: <InputAdornment position={"start"}>RZ</InputAdornment>,
               endAdornment: <InputAdornment position={"end"}>°</InputAdornment>,
             }} />
           <TextField id='pickingpose_t5' value={IpickingPose[4]} onChange={(event) => onChangeTask(event, INDEX_4)} onBlur={handleBlur} disabled={false} size={"small"} defaultValue={"0.00"} type={"number"} className={styles["desc-textfield"]}
             InputProps={{
-              startAdornment: <InputAdornment position={"start"}>Ry</InputAdornment>,
+              startAdornment: <InputAdornment position={"start"}>RY</InputAdornment>,
               endAdornment: <InputAdornment position={"end"}>°</InputAdornment>,
             }} />
           <TextField id='pickingpose_t6' value={IpickingPose[5]} onChange={(event) => onChangeTask(event, INDEX_5)} onBlur={handleBlur} disabled={false} size={"small"} defaultValue={"0.00"} type={"number"} className={styles["desc-textfield"]}
             InputProps={{
-              startAdornment: <InputAdornment position={"start"}>Rz</InputAdornment>,
+              startAdornment: <InputAdornment position={"start"}>RX</InputAdornment>,
               endAdornment: <InputAdornment position={"end"}>°</InputAdornment>,
             }} />
         </AccordionDetails>

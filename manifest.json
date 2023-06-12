@@ -1,7 +1,7 @@
 {
     "name": "Sensopart",
     "packageName": "vision.module.sensopart.setting",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "sdkVersion": "1",
     "icon": "assets/images/icon.png",
     "drscModulePackageFile": "drsc_vision.module.sensopart.setting.dm",

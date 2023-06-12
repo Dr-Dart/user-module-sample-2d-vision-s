@@ -1,4 +1,4 @@
-import { FourNumArray } from "./dart-api";
+import { FourNumArray, SixNumArray, ThreeNumArray } from "./dart-api";
 
 /**
  * 3D coordinate system notation
@@ -7,7 +7,7 @@ import { FourNumArray } from "./dart-api";
  * @api-version 1
  * @user
  */
-export const CoordinateNotationType = {
+export const EulerType = {
     /**
      * Orientation is RotZ*RotY*RotZ
      *
@@ -22,88 +22,19 @@ export const CoordinateNotationType = {
      * @user
      */
     ZYX: 1,
+    /**
+     * Orientation is RotX*RotY*RotZ
+     *
+     * @api-version 1
+     * @user
+     */
+    XYZ: 2,
+
 }  as const;
 /**
  * @ignore
  */
-export type CoordinateNotationType = typeof CoordinateNotationType[keyof typeof CoordinateNotationType];
-
-/**
- * 3D Vector
- *
- * @enum
- * @api-version 1
- * @user
- */
-export interface Vector3D {
-    /**
-     * X value
-     *
-     * @enum
-     * @api-version 1
-     * @user
-     */
-    x: number,
-    /**
-     * Y value
-     *
-     * @enum
-     * @api-version 1
-     * @user
-     */
-    y: number,
-    /**
-     * Z value
-     *
-     * @enum
-     * @api-version 1
-     * @user
-     */
-    z: number
-}
-
-/**
- * 3D angular value.
- * The meaning of the values of a, b, and c is different depending on the notation.
- *
- * @enum
- * @api-version 1
- * @user
- */
-export interface EulerAngle {
-    /**
-     * First rotation element (degree)
-     *
-     * @enum
-     * @api-version 1
-     * @user
-     */
-    a: number,
-    /**
-     * Second rotation element (degree)
-     *
-     * @enum
-     * @api-version 1
-     * @user
-     */
-    b: number,
-    /**
-     * Third rotation element (degree)
-     *
-     * @enum
-     * @api-version 1
-     * @user
-     */
-    c:number,
-    /**
-     * Coordinate system notation
-     *
-     * @enum
-     * @api-version 1
-     * @user
-     */
-    type: CoordinateNotationType
-}
+export type EulerType = typeof EulerType[keyof typeof EulerType];
 
 /**
  * 3D coordinate system structure
@@ -114,21 +45,22 @@ export interface EulerAngle {
  */
 export interface Coordinate {
     /**
-     * Position element.
+     * Pose element.
      *
      * @enum
      * @api-version 1
      * @user
      */
-    position: Vector3D,
+    pose:SixNumArray,
+
     /**
-     * Rotation element
+     * Coordinate system notation
      *
      * @enum
      * @api-version 1
      * @user
      */
-    rotation: EulerAngle
+    type: EulerType
 }
 
 /**
@@ -160,7 +92,7 @@ export interface IMathLibrary {
      * @api-verion 1
      * @user
      */
-    crossProduct(vector1: Vector3D, vector2: Vector3D): Vector3D
+    crossProduct(vector1: ThreeNumArray, vector2: ThreeNumArray): ThreeNumArray
 
     /**
      * Calculate the dot product of two vectors.
@@ -172,7 +104,7 @@ export interface IMathLibrary {
      * @api-verion 1
      * @user
      */
-    dotProduct(vector1: Vector3D, vector2: Vector3D): number
+    dotProduct(vector1: ThreeNumArray, vector2: ThreeNumArray): number
 
     /**
      * Caculate the square of a vector's magnitude.
@@ -183,7 +115,7 @@ export interface IMathLibrary {
      * @api-verion 1
      * @user
      */
-    magnitudeSQ(vector: Vector3D): number
+    magnitudeSQ(vector: ThreeNumArray): number
 
     /**
      * Calculate the magnitude of the vector.
@@ -194,7 +126,7 @@ export interface IMathLibrary {
      * @api-verion 1
      * @user
      */
-    magnitude(vector: Vector3D): number
+    magnitude(vector: ThreeNumArray): number
 
     /**
      * Determines whether the magnitude of the vector is 0.
@@ -205,7 +137,7 @@ export interface IMathLibrary {
      * @api-verion 1
      * @user
      */
-    isVectorZero(vector: Vector3D): boolean
+    isVectorZero(vector: ThreeNumArray): boolean
 
     /**
      * Calculate the unit vector.
@@ -216,7 +148,7 @@ export interface IMathLibrary {
      * @api-verion 1
      * @user
      */
-    unitVector(vector1: Vector3D): Vector3D
+    unitVector(vector1: ThreeNumArray): ThreeNumArray
 
     /**
      * Calculates a matrix in which each axis direction of the input matrix is corrected to be perpendicular to each other.
@@ -238,7 +170,7 @@ export interface IMathLibrary {
      * @api-verion 1
      * @user
      */
-    eulerToMatrix(pose: Coordinate): MatrixH3D | null
+    eulerToMatrix(pose: Coordinate): MatrixH3D
 
     /**
      * Calculate the three-dimensional pose matrix with the pose denoted by Euler ZYZ.
@@ -249,7 +181,7 @@ export interface IMathLibrary {
      * @api-verion 1
      * @user
      */
-    eulerZYZToMatrix(pose: Coordinate): MatrixH3D | null
+    eulerZYZToMatrix(pose: Coordinate): MatrixH3D
 
     /**
      * Calculate the three-dimensional pose matrix with the pose denoted by Euler ZYX.
@@ -260,7 +192,18 @@ export interface IMathLibrary {
      * @api-verion 1
      * @user
      */
-    eulerZYXToMatrix(pose: Coordinate): MatrixH3D | null
+    eulerZYXToMatrix(pose: Coordinate): MatrixH3D
+
+    /**
+     * Calculate the three-dimensional pose matrix with the pose denoted by Euler XYZ.
+     *
+     * @param pose Pose values defined in xyz notation.
+     * @return A three-dimensional pose matrix
+     *
+     * @api-verion 1
+     * @user
+     */
+     eulerXYZToMatrix(pose: Coordinate): MatrixH3D
 
     /**
      * Calculate the pose denoted by Euler ZYZ with the three-dimensional pose matrix
@@ -272,7 +215,7 @@ export interface IMathLibrary {
      * @api-verion 1
      * @user
      */
-    matrixToEulerZYZ(hMat: MatrixH3D, flip?: boolean): Coordinate | null
+    matrixToEulerZYZ(hMat: MatrixH3D, flip?: boolean): Coordinate
 
     /**
      * Calculate the pose denoted by Euler ZYX with the three-dimensional pose matrix
@@ -284,7 +227,19 @@ export interface IMathLibrary {
      * @api-verion 1
      * @user
      */
-    matrixToEulerZYX(hMat: MatrixH3D, flip?: boolean): Coordinate | null
+    matrixToEulerZYX(hMat: MatrixH3D, flip?: boolean): Coordinate
+
+    /**
+     * Calculate the pose denoted by Euler XYZ with the three-dimensional pose matrix
+     *
+     * @param hMat pose A three-dimensional pose matrix
+     * @param flip
+     * @return Pose values defined in xyz notation.
+     *
+     * @api-verion 1
+     * @user
+     */
+     matrixToEulerXYZ(hMat: MatrixH3D, flip?: boolean): Coordinate
 
     /**
      * Perform coordinate system multiplication on euler values. (eulerA * eulerB)
@@ -296,7 +251,7 @@ export interface IMathLibrary {
      * @api-verion 1
      * @user
      */
-     eulerMul(eulerA: Coordinate, eulerB: Coordinate, ref: CoordinateNotationType): Coordinate
+     eulerMul(eulerA: Coordinate, eulerB: Coordinate, ref: EulerType): Coordinate
 
     /**
      * matrix multiplication (mat_a * mat_b)
@@ -342,7 +297,7 @@ export interface IMathLibrary {
      * @api-verion 1
      * @user
      */
-    calculateDegreeAngleBetweenTwoVector(vector1: Vector3D, vector2: Vector3D): number
+    calculateDegreeAngleBetweenTwoVector(vector1: ThreeNumArray, vector2: ThreeNumArray): number
 
     /**
      * Define a three-dimensional pose matrix using three points.
@@ -355,5 +310,16 @@ export interface IMathLibrary {
      * @api-verion 1
      * @user
      */
-    calculateMatrixUsingThreePoints(origin: Vector3D, pointAlongX: Vector3D, pointOnXyPlane: Vector3D): MatrixH3D | null
+    calculateMatrixUsingThreePoints(origin: ThreeNumArray, pointAlongX: ThreeNumArray, pointOnXyPlane: ThreeNumArray): MatrixH3D | null
+
+    /**
+     * Changes the Notation of the input Coordinate and returns it.
+     *
+     * @param pose original pose
+     * @param type new notation
+     *
+     * @api-verion 1
+     * @user
+    */
+    convertEuler(pose:Coordinate, type: EulerType) : Coordinate;
 }
