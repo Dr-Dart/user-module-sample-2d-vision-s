@@ -4,15 +4,27 @@
 
 ## *Precautions*
 #### Note
-> __This sample code is currently private for developers participating in the Early Access Program and only works in the Dr.Dart Ecosystem.__ 
+- This sample code is only works in the Dr.Dart Ecosystem.
+- The `Sample 2D Vision Module` is provided as a sample and may not function properly.
+- We do not assume any responsibility for any issues that may occur while using this module.
+- When operating the robot, please prioritize safety and be cautious of potential collisions with the robot and its surroundings. It is recommended to reduce the speed during operation.
+- This module is a sample module and does not receive any modification requests.
+
+**Requirements:**
+To successfully run this sample example, the following equipment is required:
+- Sensopart Visor Robotic
+- Doosan robot
+- Doosan robot controller
+
 
 ## *Overview*
-"This sample is a modified TCP/IP client Template module provided from the Device Module UI templates."
+"This sample is a modified TCP/IP client Template module provided from the Device Module UI templates."\
+
 
 ### Vision Module Main View
 |File|Description|
 |---|---|
-|Manifest.json<br>(In sample.2D.vision.module/<br>vision.module.sensopart.setting)|To use 1 basic module Main screen and 1 User Commands, 2 screens and 1 services are declared.<br> (*Note. However, in the case of the service, it will be changed so that User Command can operate even if there is only the User Command Service service in the released version.)</br>|
+|Manifest.json<br>(In sample.2D.vision.module/<br>Visor)|To use 1 basic module Main screen and 1 User Commands, 2 screens and 1 services are declared.<br> (*Note. However, in the case of the service, it will be changed so that User Command can operate even if there is only the User Command Service service in the released version.)</br>|
 |index.tsx| This is where the database is initialized and MainScreen VisionSetting.tsx is imported.|
 |utils/DatabaseManager.ts| Includes functions for creating and inserting into tables using DB functions in Dart API.|
 |components/VisionSettings.tsx| This module contains the main screen of the application. It includes buttons for connecting to the Vision Device as a TCP/IP client and setting the mode using checkboxes. It also imports child components such as VisionJobMain, Command, and Calibration.|
@@ -73,6 +85,17 @@ Regenerate response
 * The display of Euler angles in ZYZ on the screen has been changed to ZYX.
 * The ZYZ change values in DRL_Sub_Detection.ts have been changed to ZYX.
 
+## [1.0.3] - Updates
+
+### Added
+- Added a display screen for when a popup is triggered on the left side of the screen.
+- Added a task editor module file for IMPORT.
+
+### Changed
+- Modified some parts of the screen layout.
+- Modified some of the USER COMMANDS to utilize DETECTION results elsewhere.
+
+
 
 
 ## *Usage*
@@ -87,14 +110,19 @@ Regenerate response
 * You can add these command blocks to your task list to set up Shoot Pose, Vision Pose, and Picking Pose.
 * Obtain 2D Pose through the Detection User Command.
 * When the task is executed, the 2D Pose can be utilized in other commands.
+* Try using the attached Task Editor sample file by importing it into the Task editor module.
+* Detection result can be used for other movel.
 
 ## *Limitations*
-#### The current sample of EAP version has the following limitations however We will update the Task Editor soon and redistribute it to the Dart-Store.
-
+#### The current sample version has the following limitations.
+**[UserCommand in Task Editor]** 
+<br>- The modification and saving of values in the property window of the twodimensional drl User Command is temporarily stored in the twodimensional sample module db. All twodimensional drl commands in the task editor share the same stored data.
+<br>- Before using the threedimensional_drl User Command, vision.module.twodimensional needs to be executed once for temporary db creation.
+<br>- Future enhancements to the task editor are independent of the vision module, so check with your Dart suite manager.
 
 ### 1. [Sensopart Vision Sample Module]
 - Please refer to the Dart-developer site and Dart-API documentation for information on the APIs and code usage used in this module.
- - A Sensopart Visor camera is required, and for instructions on setting up the camera and downloading the software, please refer to the Sensopart website: https://www.sensopart.com/ko/service/downloads/143-documentation-for-visor/
+ - A Sensopart Visor camera is required, and for instructions on setting up the camera and downloading the software, please refer to the Sensopart website: https://www.sensopart.com/ko/service/downloads/143-documentation-for-vision.module.twodimensional/
  - Referring to the Sensopart manual and to briefly explain, you need to set up Sensopart's software, Senso Config, as follows:
     + Job Settings : 
         1. Press 'New' to create a job.
@@ -119,8 +147,8 @@ Regenerate response
 - Since the camera is calibrated in Euler XYZ, rotation values will be displayed in XYZ when triggered. When the module receives this, it converts Euler XYZ into Euler ZYX for display on the screen. When the robot operates and moves to the offset pose, it also converts from Euler XYZ to Euler ZYX for movement.
 
 2. **[DRL Generator in Dart-IDE]** 
-<br>-You cannot use drl files created by DRL Generator. Currently, it should be used as a string like `drl/DRL_Calibration_run.ts`. It will be improved in the release version.
+<br>-The drl file generated by the DRL Generator was not usable, so we used the `drl/DRL_Calibration_run.ts` file, but now we can use the DRL generator in the Dart-IDE. For details, ask the Dart suite manager how to use the DRL Generator.
 
 3. **[Task Editor in Dart-Platform]** 
-<br>- When changing the value in the User Command Property window, the change is not reflected in the Task Editor. Normally, like other move commands, user input values should be saved through the task editor. However, this is due to a bug in Task Editor, and we will upload it to the Store as soon as we fix it. However, the first preset will properly reflect the port number you changed in module settings.
+<br>- When changing the value in the User Command Property window, the change is not reflected in the Task Editor. Normally, like other move commands, user input values should be saved through the task editor. However, this is due to a bug in Task Editor.
 <br>- There is a problem that intermittently does not work properly when playing in Task Editor. We are aware of the problem and are fixing it.

@@ -1,0 +1,11 @@
+{
+    "name": "2D Vision Example",
+    "packageName": "vision.module.twodimensional",
+    "version": "1.0.3",
+    "sdkVersion": "1",
+    "icon": "assets/images/icon.png",
+    "drscModulePackageFile": "drsc_vision.module.twodimensional.dm",
+    "developer" : "Doosan Robotics",
+    "drcfModulePackageFile": "",
+    "paid": false
+}

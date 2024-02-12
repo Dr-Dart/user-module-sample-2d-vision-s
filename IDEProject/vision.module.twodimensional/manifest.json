@@ -1,0 +1,51 @@
+{
+    "main": "index.bundle.js",
+    "supportedLanguages": [],
+    "requiredPackageNames": [],
+    "type": "DEVICE_SETTING",
+    "screens": [
+        {
+            "name": "2D Vision",
+            "id": "MainScreen",
+            "messageFilters": [
+                {
+                    "action": "dart.message.action.MAIN",
+                    "category": "dart.message.category.SCREEN"
+                }
+            ]
+        },
+        {
+            "name": "Detection",
+            "id": "pip_detection",
+            "messageFilters": [
+              {
+                "action": "com.dart.module.taskeditor.action.USER_COMMAND",
+                "category": "dart.message.category.PIP_SCREEN"
+              }
+            ]
+          }
+    ],
+    "services": [
+        {
+            "name": "User Command Service",
+            "id": "usercommand",
+            "messageFilters": [
+              {
+                "action": "com.dart.module.taskeditor.action.USER_COMMAND",
+                "category": "dart.message.category.SERVICE"
+              }
+            ]
+           },
+         {
+            "name": "Detection Service",
+            "id": "pip_detection",
+            "messageFilters": [
+              {
+                "action": "com.dart.module.taskeditor.action.USER_COMMAND",
+                "category": "dart.message.category.SERVICE"
+              }
+            ]
+           }
+    ]
+    
+}
