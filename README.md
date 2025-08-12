@@ -1,3 +1,19 @@
+# [DEPRECATED] 
+
+⚠️ This project is DEPRECATED ⚠️
+
+
+
+**This repository is officially no longer supported as of April 4, 2024 after releasing Dr.Dart-Platform v3.2.0.**
+
+
+
+No new features will be added, and no bug fixes will be made. We can no longer guarantee a response to security vulnerabilities.
+
+
+
+-----
+
 # [Sample 2D Vision Module]
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
